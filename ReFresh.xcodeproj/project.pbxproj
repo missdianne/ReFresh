@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3EB67E1941A9E100383668 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EB67D1941A9E100383668 /* MapKit.framework */; };
+		1F3EB6811941ABF600383668 /* NutritionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6801941ABF600383668 /* NutritionGroup.m */; };
+		1F3EB6841941ABF700383668 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6831941ABF700383668 /* Fridge.m */; };
+		1F3EB6871941ABF700383668 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6861941ABF700383668 /* Item.m */; };
+		1F3EB68A1941ABF700383668 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6891941ABF700383668 /* Recipe.m */; };
+		1F3EB68D1941AC7B00383668 /* Fridge+Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB68C1941AC7B00383668 /* Fridge+Annotation.m */; };
 		1F44FDAF1932800E00E44C23 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDAD1932800E00E44C23 /* Model.xcdatamodeld */; };
 		1F44FDC21932863700E44C23 /* ReFreshDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDC11932863700E44C23 /* ReFreshDatabase.m */; };
 		1F44FDC51932896500E44C23 /* Item+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDC41932896500E44C23 /* Item+Create.m */; };
@@ -14,10 +20,6 @@
 		1F44FDD219329E2B00E44C23 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDD119329E2B00E44C23 /* CoreDataTableViewController.m */; };
 		1F44FDD51932A63C00E44C23 /* MyFridgeCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDD41932A63C00E44C23 /* MyFridgeCDTVC.m */; };
 		1F44FDE419340A7300E44C23 /* addItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDE319340A7300E44C23 /* addItemViewController.m */; };
-		1F509753194193D8003AC609 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509752194193D8003AC609 /* Item.m */; };
-		1F509756194193D9003AC609 /* NutritionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509755194193D9003AC609 /* NutritionGroup.m */; };
-		1F509759194193D9003AC609 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509758194193D9003AC609 /* Fridge.m */; };
-		1F50975C194193D9003AC609 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F50975B194193D9003AC609 /* Recipe.m */; };
 		1F6903F619327ECE00C340F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F519327ECE00C340F2 /* Foundation.framework */; };
 		1F6903F819327ECE00C340F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F719327ECE00C340F2 /* CoreGraphics.framework */; };
 		1F6903FA19327ECE00C340F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F919327ECE00C340F2 /* UIKit.framework */; };
@@ -54,6 +56,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F3EB67D1941A9E100383668 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1F3EB67F1941ABF600383668 /* NutritionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionGroup.h; sourceTree = "<group>"; };
+		1F3EB6801941ABF600383668 /* NutritionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionGroup.m; sourceTree = "<group>"; };
+		1F3EB6821941ABF700383668 /* Fridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fridge.h; sourceTree = "<group>"; };
+		1F3EB6831941ABF700383668 /* Fridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fridge.m; sourceTree = "<group>"; };
+		1F3EB6851941ABF700383668 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		1F3EB6861941ABF700383668 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		1F3EB6881941ABF700383668 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		1F3EB6891941ABF700383668 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		1F3EB68B1941AC7B00383668 /* Fridge+Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Fridge+Annotation.h"; sourceTree = "<group>"; };
+		1F3EB68C1941AC7B00383668 /* Fridge+Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Fridge+Annotation.m"; sourceTree = "<group>"; };
 		1F44FDAE1932800E00E44C23 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1F44FDC01932863700E44C23 /* ReFreshDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReFreshDatabase.h; sourceTree = "<group>"; };
 		1F44FDC11932863700E44C23 /* ReFreshDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReFreshDatabase.m; sourceTree = "<group>"; };
@@ -67,14 +80,6 @@
 		1F44FDD41932A63C00E44C23 /* MyFridgeCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFridgeCDTVC.m; sourceTree = "<group>"; };
 		1F44FDE219340A7300E44C23 /* addItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addItemViewController.h; sourceTree = "<group>"; };
 		1F44FDE319340A7300E44C23 /* addItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addItemViewController.m; sourceTree = "<group>"; };
-		1F509751194193D8003AC609 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		1F509752194193D8003AC609 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
-		1F509754194193D9003AC609 /* NutritionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionGroup.h; sourceTree = "<group>"; };
-		1F509755194193D9003AC609 /* NutritionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionGroup.m; sourceTree = "<group>"; };
-		1F509757194193D9003AC609 /* Fridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fridge.h; sourceTree = "<group>"; };
-		1F509758194193D9003AC609 /* Fridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fridge.m; sourceTree = "<group>"; };
-		1F50975A194193D9003AC609 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
-		1F50975B194193D9003AC609 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		1F6903F219327ECE00C340F2 /* ReFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6903F519327ECE00C340F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F6903F719327ECE00C340F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3EB67E1941A9E100383668 /* MapKit.framework in Frameworks */,
 				1F6903F819327ECE00C340F2 /* CoreGraphics.framework in Frameworks */,
 				1F6903FA19327ECE00C340F2 /* UIKit.framework in Frameworks */,
 				1F6903F619327ECE00C340F2 /* Foundation.framework in Frameworks */,
@@ -141,14 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				1F44FDAD1932800E00E44C23 /* Model.xcdatamodeld */,
-				1F50975A194193D9003AC609 /* Recipe.h */,
-				1F50975B194193D9003AC609 /* Recipe.m */,
-				1F509757194193D9003AC609 /* Fridge.h */,
-				1F509758194193D9003AC609 /* Fridge.m */,
-				1F509754194193D9003AC609 /* NutritionGroup.h */,
-				1F509755194193D9003AC609 /* NutritionGroup.m */,
-				1F509751194193D8003AC609 /* Item.h */,
-				1F509752194193D8003AC609 /* Item.m */,
+				1F3EB68B1941AC7B00383668 /* Fridge+Annotation.h */,
+				1F3EB68C1941AC7B00383668 /* Fridge+Annotation.m */,
+				1F3EB67F1941ABF600383668 /* NutritionGroup.h */,
+				1F3EB6801941ABF600383668 /* NutritionGroup.m */,
+				1F3EB6821941ABF700383668 /* Fridge.h */,
+				1F3EB6831941ABF700383668 /* Fridge.m */,
+				1F3EB6851941ABF700383668 /* Item.h */,
+				1F3EB6861941ABF700383668 /* Item.m */,
+				1F3EB6881941ABF700383668 /* Recipe.h */,
+				1F3EB6891941ABF700383668 /* Recipe.m */,
 				1F8466BC1941311C00FDF1E8 /* Fridge+Create.h */,
 				1F8466BD1941311C00FDF1E8 /* Fridge+Create.m */,
 				1F44FDCC19329B7000E44C23 /* NutritionGroup+Create.h */,
@@ -181,6 +189,7 @@
 		1F6903F419327ECE00C340F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EB67D1941A9E100383668 /* MapKit.framework */,
 				1F6903F519327ECE00C340F2 /* Foundation.framework */,
 				1F6903F719327ECE00C340F2 /* CoreGraphics.framework */,
 				1F6903F919327ECE00C340F2 /* UIKit.framework */,
@@ -372,25 +381,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F509759194193D9003AC609 /* Fridge.m in Sources */,
-				1F509753194193D8003AC609 /* Item.m in Sources */,
 				1F44FDD51932A63C00E44C23 /* MyFridgeCDTVC.m in Sources */,
-				1F509756194193D9003AC609 /* NutritionGroup.m in Sources */,
 				1FBC621D193AA37B006F59E4 /* SelectedRecipeViewController.m in Sources */,
 				1F44FDCE19329B7000E44C23 /* NutritionGroup+Create.m in Sources */,
 				1FCDC76B193849D2009E9C2A /* YummlyFetcher.m in Sources */,
+				1F3EB6811941ABF600383668 /* NutritionGroup.m in Sources */,
+				1F3EB68D1941AC7B00383668 /* Fridge+Annotation.m in Sources */,
 				1FCDC77219394A31009E9C2A /* IngredientCollectionViewCell.m in Sources */,
 				1FCDC76819384841009E9C2A /* RecipeTVC.m in Sources */,
 				1F44FDC21932863700E44C23 /* ReFreshDatabase.m in Sources */,
 				1F84669719410EAD00FDF1E8 /* FridgeAnimationVC.m in Sources */,
 				1F69040619327ECE00C340F2 /* ReFreshAppDelegate.m in Sources */,
 				1F44FDD219329E2B00E44C23 /* CoreDataTableViewController.m in Sources */,
+				1F3EB68A1941ABF700383668 /* Recipe.m in Sources */,
 				1F8466C11941456A00FDF1E8 /* NearbyFridgesVC.m in Sources */,
-				1F50975C194193D9003AC609 /* Recipe.m in Sources */,
 				1F69040F19327ECE00C340F2 /* ReFreshViewController.m in Sources */,
+				1F3EB6841941ABF700383668 /* Fridge.m in Sources */,
 				1F69040219327ECE00C340F2 /* main.m in Sources */,
 				1F44FDE419340A7300E44C23 /* addItemViewController.m in Sources */,
 				1F44FDC51932896500E44C23 /* Item+Create.m in Sources */,
+				1F3EB6871941ABF700383668 /* Item.m in Sources */,
 				1F8466BE1941311C00FDF1E8 /* Fridge+Create.m in Sources */,
 				1F44FDAF1932800E00E44C23 /* Model.xcdatamodeld in Sources */,
 				1FCDC77519394A94009E9C2A /* IngredientCVC.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "ReFreshDatabase.h"
 #import "Item+Create.h"
+#import "Fridge+Create.h"
 //#import "Item+create.h"
 
 
@@ -103,6 +104,7 @@
                 BOOL failure = YES;
             //    NSLog(@"e");
                 NSArray *items = [self test];
+                
                 if (items)
                 {
                     failure = NO;
@@ -111,6 +113,7 @@
                         {
                             [Item itemWithInfo:itemDictionary inManagedObjectContext:self.managedObjectContext];
                         }
+                        
                         if (completionHandler) dispatch_async(dispatch_get_main_queue(), ^{
                             completionHandler(YES);
                         });
@@ -143,17 +146,22 @@
     
     
     
-    NSDictionary *carrot = @{@"name": @"carrots", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-    NSDictionary *peaches = @{@"name": @"peaches", @"servingSize": @1, @"servingType": @"gallon", @"dateOpen": n, @"NutritionGroup": @"fruit"};
-    NSDictionary *swiss = @{@"name": @"swiss", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup":@"dairy"};
-    NSDictionary *kale = @{@"name": @"kale", @"servingSize": @1, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-    NSDictionary *salmon = @{@"name": @"salmon", @"servingSize": @.5, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"protein"};
-    NSDictionary *peas = @{@"name": @"peas", @"servingSize": @6, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-     NSDictionary *basil = @{@"name": @"basil", @"servingSize": @4, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-    NSDictionary *tomatoes = @{@"name": @"tomatoes", @"servingSize": @3, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-    NSDictionary *broccoli = @{@"name": @"broccoli", @"servingSize": @1, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie"};
-     NSDictionary *chicken = @{@"name": @"chicken", @"servingSize": @.3, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"protein"};
-      NSDictionary *milk = @{@"name": @"milk", @"servingSize": @2, @"servingType": @"gallon", @"dateOpen": n, @"NutritionGroup": @"dairy"};
+    NSDictionary *carrot = @{@"name": @"carrots", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *peaches = @{@"name": @"peaches", @"servingSize": @1, @"servingType": @"gallon", @"dateOpen": n, @"NutritionGroup": @"fruit", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *swiss = @{@"name": @"swiss", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup":@"dairy", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *kale = @{@"name": @"kale", @"servingSize": @1, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *salmon = @{@"name": @"salmon", @"servingSize": @.5, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"protein", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *peas = @{@"name": @"peas", @"servingSize": @6, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+     NSDictionary *basil = @{@"name": @"basil", @"servingSize": @4, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *tomatoes = @{@"name": @"tomatoes", @"servingSize": @3, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+    NSDictionary *broccoli = @{@"name": @"broccoli", @"servingSize": @1, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
+     NSDictionary *chicken = @{@"name": @"chicken", @"servingSize": @.3, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"protein", @"nearExpire": @0, @"includedIn": @"dianne"};
+      NSDictionary *milk = @{@"name": @"milk", @"servingSize": @2, @"servingType": @"gallon", @"dateOpen": n, @"NutritionGroup": @"dairy", @"nearExpire": @0, @"includedIn": @"dianne"};
+    
+    
+    
+     NSDictionary *cherries = @{@"name": @"cherries", @"servingSize": @1.5, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"fruit", @"nearExpire": @0, @"includedIn": @"taylor"};
+        NSDictionary *watermelon = @{@"name": @"watermelon", @"servingSize": @5, @"servingType": @"lb", @"dateOpen": n, @"NutritionGroup": @"fruit", @"nearExpire": @0, @"includedIn": @"taylor"};
     
     
     [testArray addObject:carrot];
@@ -167,7 +175,8 @@
     [testArray addObject:broccoli];
     [testArray addObject:chicken];
     [testArray addObject:milk];
-      
+    [testArray addObject:cherries];
+    [testArray addObject:watermelon];
    // NSLog (@"test array: %@", testArray);
     return testArray;
 }

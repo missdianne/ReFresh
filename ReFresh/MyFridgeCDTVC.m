@@ -60,7 +60,7 @@
     if (self.managedObjectContext) {
    //     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NutritionGroup"];
           NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-        request.predicate = nil; // this means ALL items
+        request.predicate = [NSPredicate predicateWithFormat:@"includedIn.name == %@", @"dianne"]; // this means ALL items
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
                                                                   ascending:YES
                                                                    selector:@selector(localizedStandardCompare:)]];
@@ -71,6 +71,7 @@
                                                                                        cacheName:nil];
    //     self.fetchedResultsController.delegate = self;
         self.fetchedItems = [self.fetchedResultsController fetchedObjects];
+              
         self.fetchedNGs = [self listNGs: self.fetchedItems];
     } else {
         self.fetchedResultsController = nil;
@@ -200,12 +201,14 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ of %@", item.servingSize, item.servingType,item.name];
     
     NSTimeInterval seconds = [item.dateExpire doubleValue];
+   // NSLog (@"seconds to expiration %f", seconds);
     
     NSDate *expr = [NSDate dateWithTimeIntervalSince1970:seconds];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"MM/dd/yyyy"];
     NSString *dateString = [dateFormat stringFromDate:expr];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"expires %@", dateString];
+    
 
    // NSLog(@"date: %@", dateString);
     
@@ -224,7 +227,10 @@
     if ([comp1 day]-2   <= [comp2 day] && [comp1 month] == [comp2 month] && [comp1 year]  == [comp2 year])
     {
         cell.backgroundColor = [UIColor colorWithRed:255/255.0f green:181/255.0f blue:201/255.0f alpha:1.0f];
+        if (item.nearExpire ==0){
           [self addReminderEventForItem:item];
+        item.nearExpire = [NSNumber numberWithInt:1];
+        }
     }
     
     cell.accessoryType = UITableViewCellAccessoryDetailButton;

@@ -2,7 +2,7 @@
 //  Fridge.m
 //  ReFresh
 //
-//  Created by Dianne Na on 6/5/14.
+//  Created by Dianne Na on 6/6/14.
 //  Copyright (c) 2014 CS193P. All rights reserved.
 //
 
@@ -14,6 +14,8 @@
 
 @dynamic name;
 @dynamic password;
+@dynamic latitude;
+@dynamic longitude;
 @dynamic has;
 
 @end

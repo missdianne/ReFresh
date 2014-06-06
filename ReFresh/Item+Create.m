@@ -8,6 +8,7 @@
 
 #import "Item+Create.h"
 #import "NutritionGroup+Create.h"
+#import "Fridge+Create.h"
 
 @implementation Item (Create)
 
@@ -42,6 +43,11 @@ inManagedObjectContext:(NSManagedObjectContext *)context
         item.belongTo = [NutritionGroup nutritionGroupWithName: nutriGroupName inManagedObjectContext: context];
         item.myNG = nutriGroupName;
         
+        
+        NSString *fridge = [itemDictionary valueForKey:@"includedIn"];
+        item.includedIn = [Fridge itemWithInfo:fridge inManagedObjectContext:context];
+    
+        
         //set expiration based on type of food
         
         if ([item.belongTo.name  isEqual: @"fruit"])
@@ -63,10 +69,11 @@ inManagedObjectContext:(NSManagedObjectContext *)context
             NSNumber *addFreshTime = @(60*60*24*10);
             item.dateExpire = @([item.dateOpen intValue]+ [addFreshTime intValue]);
         //    item.active = 0; //true
-        } else if ([item.belongTo isEqual: @"dairy"])
+        } else if ([item.belongTo.name isEqual: @"dairy"])
         {
             NSNumber *addFreshTime = @(60*60*24*7);
             item.dateExpire = @([item.dateOpen intValue]+ [addFreshTime intValue]);
+         
          //   item.active = 0; //true
         }
 
@@ -74,7 +81,7 @@ inManagedObjectContext:(NSManagedObjectContext *)context
         } else {
         item = [matches firstObject];
     }
-   // NSLog(@"added item: %@", item.name);
+    NSLog(@"added item: %@", item.name);
     return item;
 
 }

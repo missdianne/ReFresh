@@ -8,27 +8,27 @@
         <scene sceneID="Iao-4l-ze0">
             <objects>
                 <tableViewController id="CVa-k5-HLA" customClass="MyFridgeCDTVC" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ogk-7r-sJS">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="37" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ogk-7r-sJS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" alpha="0.5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Food Item" textLabel="EtJ-7i-kMO" detailTextLabel="Xsf-Cl-DM6" rowHeight="44" style="IBUITableViewCellStyleValue1" id="mEB-Qe-CnZ">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell opaque="NO" alpha="0.5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Food Item" textLabel="EtJ-7i-kMO" detailTextLabel="Xsf-Cl-DM6" rowHeight="37" style="IBUITableViewCellStyleValue1" id="mEB-Qe-CnZ">
+                                <rect key="frame" x="0.0" y="86" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEB-Qe-CnZ" id="4tA-nM-mwn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EtJ-7i-kMO">
-                                            <rect key="frame" x="15" y="10" width="40" height="24"/>
+                                            <rect key="frame" x="15" y="6" width="40" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="36" id="Xsf-Cl-DM6">
-                                            <rect key="frame" x="269" y="18" width="36" height="12"/>
+                                            <rect key="frame" x="269" y="14" width="36" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -355,7 +355,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" textLabel="NE6-cd-8oU" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="CKe-A4-uwU">
+                            <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="NE6-cd-8oU" style="IBUITableViewCellStyleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="CKe-A4-uwU">
                                 <rect key="frame" x="0.0" y="344" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKe-A4-uwU" id="VZ0-fL-FTj">
@@ -370,6 +370,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </subviews>
@@ -378,6 +379,7 @@
                     <navigationItem key="navigationItem" title="Nearby ReFresh Fridges" id="aAf-La-UZg"/>
                     <connections>
                         <outlet property="map" destination="j8Y-BP-orj" id="egR-YJ-qi7"/>
+                        <outlet property="otherFridge" destination="9lH-Hh-b0G" id="tUE-lh-Qow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcO-0O-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>

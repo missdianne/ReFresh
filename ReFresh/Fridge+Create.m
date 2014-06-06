@@ -10,4 +10,29 @@
 
 @implementation Fridge (Create)
 
++ (Fridge *)itemWithInfo:(NSString *)name
+  inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Fridge *fridge = nil;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Fridge"];
+    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+    
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if (error || !matches || ([matches count] > 1)) {
+        // handle error
+    } else if (![matches count]) {
+        fridge = [NSEntityDescription insertNewObjectForEntityForName:@"Fridge"
+                                             inManagedObjectContext:context];
+        fridge.name = name;
+    }
+        else {
+            fridge = [matches firstObject];
+        }
+        // NSLog(@"added item: %@", item.name);
+        return fridge;
+}
+
 @end

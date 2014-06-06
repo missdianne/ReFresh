@@ -180,8 +180,8 @@
     if (self.managedObjectContext) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
         
-        NSLog(@"fetching all saved ingredients with request");
-        request.predicate = nil;
+        request.predicate = [NSPredicate predicateWithFormat:@"includedIn.name == %@", @"dianne"]; // this means ALL items
+
         
         request.sortDescriptors = [NSArray arrayWithObject: [NSSortDescriptor sortDescriptorWithKey:@"name" ascending: YES]];
         NSError *error = nil;

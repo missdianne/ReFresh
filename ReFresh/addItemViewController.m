@@ -161,12 +161,8 @@
 -(void) addItem
 {
         NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-        NSLog (@"time now: %f", now);
-        
         NSNumber *n = [NSNumber numberWithDouble:now];
-        NSLog (@"time now: %@", n);
-
-      //  NSNumber *n = [NSNumber num self.dateOpenField.text;
+    
         NSInteger selected = self.servingTypeSegmentedControl.selectedSegmentIndex;
         NSString *servingTypeString = [self addServingType: selected];
 

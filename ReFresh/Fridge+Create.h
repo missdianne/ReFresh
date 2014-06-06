@@ -10,4 +10,8 @@
 
 @interface Fridge (Create)
 
+
++ (Fridge *)itemWithInfo:(NSString *)name
+inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

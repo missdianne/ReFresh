@@ -34,9 +34,6 @@
     CGFloat topWidth = CGRectGetWidth(self.fridgeTop.bounds);
     CGFloat topHeight = CGRectGetHeight(self.fridgeTop.bounds);
     
-    NSLog(@"top width is %f, top height is %f", topWidth, topHeight);
-    NSLog(@"current frame is %f", self.fridgeTop.frame.origin.y);
-    
     [UIView animateWithDuration:.75
                           delay:0.5
                         options: UIViewAnimationOptionCurveEaseInOut
@@ -52,7 +49,6 @@
     CGFloat bottomWidth = CGRectGetWidth(self.fridgeBottom.bounds);
     CGFloat bottomHeight = CGRectGetHeight(self.fridgeBottom.bounds);
     
-    NSLog(@"current frame is %f", self.fridgeBottom.frame.origin.x);
     [UIView animateWithDuration:.75
                           delay:.5
                         options: UIViewAnimationOptionCurveEaseInOut
