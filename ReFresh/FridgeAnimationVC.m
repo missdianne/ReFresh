@@ -42,8 +42,7 @@
                          
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Done!");
-                     }];
+                    }];
     
     
     CGFloat bottomWidth = CGRectGetWidth(self.fridgeBottom.bounds);
@@ -57,7 +56,7 @@
                          
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Done!");
+                       
                      }];
 
 }

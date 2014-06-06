@@ -9,6 +9,7 @@
 #import "addItemViewController.h"
 #import "ReFreshDatabase.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "Fridge+Create.h"
 
 
 @interface addItemViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -41,8 +42,8 @@
     [super viewDidLoad];
     [self veggieView];
     
-    self.currentNG = @"veggies";
-        NSLog(@"swipe recognizers begin");
+    self.currentNG = @"veggie";
+   //     NSLog(@"swipe recognizers begin");
     // Do any additional setup after loading the view.
     UISwipeGestureRecognizer *swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeRecognized:)];
     
@@ -139,7 +140,7 @@
 -(NSArray *) listOfNGs {
     if (!_listOfNGs)
     {
-        _listOfNGs =[[NSArray alloc]initWithObjects:@"dairy",@"protein", @"fruits", @"veggies", nil];
+        _listOfNGs =[[NSArray alloc]initWithObjects:@"dairy",@"protein", @"fruit", @"veggie", nil];
     }
     return _listOfNGs;
 }
@@ -170,12 +171,13 @@
     
     NSData *photo =  UIImagePNGRepresentation(self.NutritionGroup1.image);
     
-        NSDictionary *itemDictionary = @{@"name": self.nameField.text, @"servingSize": [NSNumber numberWithFloat:[self.servingSizeField.text floatValue]], @"servingType": servingTypeString, @"dateOpen": n, @"NutritionGroup": self.currentNG, @"photo": photo};
-        
+        NSDictionary *itemDictionary = @{@"name": self.nameField.text, @"servingSize": [NSNumber numberWithFloat:[self.servingSizeField.text floatValue]], @"servingType": servingTypeString, @"dateOpen": n, @"NutritionGroup": self.currentNG, @"photo": photo, @"includedIn": self.fridge};
+    
         
         Item *item = [Item itemWithInfo:itemDictionary inManagedObjectContext: self.managedObjectContext];
         
-        NSLog (@"item: %@ has been saved", item.name);
+        NSLog (@"item: %@ has nutrition group %@", item.name, item.belongTo.name);
+    NSLog (@"item %@ is opened on %@ and expires %@", item.name, item.dateOpen, item.dateExpire);
     [self addReminderEventForItem:item];
     
 }
@@ -335,37 +337,26 @@
                 //EKEvent *myEvent  = [EKEvent reminderWithEventStore:eventStore];
             
                 NSArray *calendars = [self.eventStore calendarsForEntityType:EKEntityTypeReminder];
-                
+                /*
                 for (EKCalendar *calendar in calendars)
                 {
-                    NSLog(@"Calendar = %@", calendar.title);
+                  //  NSLog(@"Calendar = %@", calendar.title);
                 }
+                 */
 
             EKCalendar *calendar = [calendars lastObject];
             EKReminder *myReminder = [EKReminder reminderWithEventStore: self.eventStore];
 
-            NSLog (@"***new reminder added for %@", item.name);
+        //    NSLog (@"***new reminder added for %@", item.name);
             myReminder.title  = [NSString stringWithFormat:@"%@ expires on  %@", item.name, item.dateExpire];
          //   myReminder.calendar  = [self.eventStore defaultCalendarForNewReminders];
                 
                 myReminder.calendar = calendar;
-            NSLog(@"saving in calendar: %@", myReminder.calendar.title);
+       //     NSLog(@"saving in calendar: %@", myReminder.calendar.title);
                 
                 NSError *error = nil;
                 [self.eventStore saveReminder:myReminder commit:YES error:&error];
                 
- //           myReminder.startDateComponents = [[NSDate alloc] init];
-            
-           /* NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-            [dateFormat setDateFormat:@"MM/dd/yyyy"];
-            NSString *dateString = [dateFormat stringFromDate:expr];
-            NSLog (@"new reminder set for %@ aka %@", dateString, expr);
-                
-         
-            myReminder.dueDateComponents  = expr;
-         */
-          //      NSTimeInterval interval = 60* -60;
-//                EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];
                 EKAlarm *alarm = [[EKAlarm alloc]init];
                 
                 NSTimeInterval seconds = [item.dateExpire doubleValue];
@@ -374,7 +365,7 @@
                 [alarm setAbsoluteDate:expr];
                 [myReminder addAlarm:alarm];
                 
-                NSLog(@"added alert");
+             //   NSLog(@"added alert");
     
               //  [myReminder setCalendar:[eventStore defaultCalendarForNewEvents]];
  //               [self performCalendarActivity: eventStore];
@@ -385,9 +376,9 @@
         }];
     } else {
         //code for iOS <6.0
-        NSLog(@" older version of iOS");
+       NSLog(@" older version of iOS");
     }
-    NSLog(@"end of eventkit reached");
+  //  NSLog(@"end of eventkit reached");
 }
 
 

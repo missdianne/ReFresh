@@ -68,6 +68,7 @@ inManagedObjectContext:(NSManagedObjectContext *)context
         {
             NSNumber *addFreshTime = @(60*60*24*10);
             item.dateExpire = @([item.dateOpen intValue]+ [addFreshTime intValue]);
+            NSLog(@"item %@ expires %@ ", item.name, item.dateExpire);
         //    item.active = 0; //true
         } else if ([item.belongTo.name isEqual: @"dairy"])
         {

@@ -13,21 +13,24 @@
 
 @implementation IngredientCollectionViewCell
 
-/*
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
       //  self.backgroundColor = [UIColor grayColor];
-        UIView *bgView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
+     /*   UIView *bgView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
         bgView.backgroundColor = [UIColor blueColor];
         bgView.layer.borderColor = [[UIColor whiteColor] CGColor];
         bgView.layer.borderWidth = 4;
         self.selectedBackgroundView = bgView;
+      */
+        self.backgroundView.layer.cornerRadius = 5;
+        self.backgroundView.layer.masksToBounds = YES;
     }
     return self;
 }
- */
+
 
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
@@ -100,7 +103,7 @@
    //     NSString *ng = self.ingredient.myNG;
         if (!self.ingredient.photo){
         NSString *pngString = [NSString stringWithFormat:@"%@.png", self.ingredient.name];
-        NSLog (@"png string is %@", pngString);
+      //  NSLog (@"png string is %@", pngString);
         self.imageView.image = [UIImage imageNamed:pngString];
         self.name.text = self.ingredient.name;
             //NSLog(@"image is %@", self.imageView.image);
@@ -109,46 +112,10 @@
             self.imageView.image = [UIImage imageWithData:ingredient.photo];
             self.name.text = self.ingredient.name;
         }
-        NSLog(@"image is %@", self.imageView.image);
-
-        /*
-        if ([ng isEqualToString:@"fruit"])
-        {
-            self.imageView.image = [UIImage imageNamed:@"fruits1.png"];
-            self.name.text = self.ingredient.name;
-
-            NSLog(@"image is %@", self.imageView.image);
-        }
-        else if([ng isEqualToString:@"dairy"])
-        {
-            self.imageView.image = [UIImage imageNamed:@"dairy.png"];
-            self.name.text = self.ingredient.name;
-
-        }
-        else if([ng isEqualToString:@"veggie"])
-        {
-           self.imageView.image = [UIImage imageNamed:@"veggies.png"];
-            self.name.text = self.ingredient.name;
-
-        }
-        else if([ng isEqualToString:@"protein"])
-        {
-            self.imageView.image = [UIImage imageNamed:@"protein.png"];
-            self.name.text = self.ingredient.name;
-
-        }
-         */
       
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+
 
 @end

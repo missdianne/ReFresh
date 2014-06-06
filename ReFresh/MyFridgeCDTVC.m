@@ -12,6 +12,8 @@
 #import "ReFreshDatabase.h"
 #import "ReFreshAppDelegate.h"
 #import "FridgeAnimationVC.h"
+#import "addItemViewController.h"
+
 
 @interface MyFridgeCDTVC () <UIAlertViewDelegate>
 
@@ -19,6 +21,8 @@
 @property (nonatomic, strong) NSMutableArray *fetchedNGs;
 @property (nonatomic) Boolean toDelete;
 @property (strong, nonatomic) EKEventStore *eventStore;
+@property (nonatomic, strong) NSString *fridgeName;
+
 @end
 
 @implementation MyFridgeCDTVC
@@ -60,7 +64,7 @@
     if (self.managedObjectContext) {
    //     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"NutritionGroup"];
           NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
-        request.predicate = [NSPredicate predicateWithFormat:@"includedIn.name == %@", @"dianne"]; // this means ALL items
+        request.predicate = [NSPredicate predicateWithFormat:@"includedIn.name == %@", self.fridgeName]; // this means ALL items
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
                                                                   ascending:YES
                                                                    selector:@selector(localizedStandardCompare:)]];
@@ -99,6 +103,7 @@
     self.tableView.backgroundView = nil;
   //  [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ice.png"]]];
     self.toDelete = FALSE;
+    self.fridgeName = @"dianne";
     
     // Do any additional setup after loading the view.
     
@@ -122,11 +127,6 @@
                                                                         [[NSNotificationCenter defaultCenter] removeObserver:observer];
                                                                     }];
     }
-    
-    
-    
-   // [self loadLogin];
-    
     
      [self.tableView reloadData];
     
@@ -230,6 +230,7 @@
         if (item.nearExpire ==0){
           [self addReminderEventForItem:item];
         item.nearExpire = [NSNumber numberWithInt:1];
+            [self alert:[NSString stringWithFormat:@"%@ is about to expire! added it to your Reminders", item.name]];
         }
     }
     
@@ -297,8 +298,6 @@
                 //   myReminder.calendar  = [self.eventStore defaultCalendarForNewReminders];
                 
                 myReminder.calendar = calendar;
-              
-                
                 NSError *error = nil;
                 [self.eventStore saveReminder:myReminder commit:YES error:&error];
                 
@@ -326,9 +325,26 @@
 }
 
 
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        if ([segue.identifier isEqualToString:@"add New Item"])
+            {
+                if ([segue.destinationViewController isKindOfClass:[addItemViewController class]]){
+                    [self prepareAddItemVC:segue.destinationViewController forFridge:self.fridgeName];
+                }
+            }
+}
 
+
+
+-(void) prepareAddItemVC: (addItemViewController *)addItemVC forFridge: (NSString *)fridgeName
+{
+    addItemVC.fridge = fridgeName;
+    
+}
 
 @end

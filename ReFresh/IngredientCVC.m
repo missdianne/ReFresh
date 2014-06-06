@@ -64,7 +64,7 @@
 // REQUIRED: Number of items in section. (Number of thumbnails)
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    NSLog(@"set num of items in section %i", [self.fridge count]);
+   // NSLog(@"set num of items in section %i", [self.fridge count]);
     return [self.fridge count];
     
 }
@@ -74,7 +74,7 @@
     // Cells that goes off screen are enqueued into a reuse pool
     // The method below looks for reuseable cell
     
-   // NSLog(@"z");
+   
     IngredientCollectionViewCell *myCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"IngredientCell" forIndexPath:indexPath];
     
     //    myCell = [[IngredientCollectionViewCell alloc] init];
@@ -146,7 +146,6 @@
     if (rdb.managedObjectContext) {
         self.managedObjectContext = rdb.managedObjectContext;
         NSLog(@"my context is: %@", self.managedObjectContext);
-        sleep(3);
         [self fetchFridge];
         
     } else {

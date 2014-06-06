@@ -18,21 +18,21 @@
 @synthesize map;
 @synthesize otherFridge;
 
+/*
 -(void) updateMapViewAnnotations
 {
     [self.map removeAnnotations:self.map.annotations];
-    
     [self.map addAnnotations: self.itemsInFridge];
     [self.map showAnnotations:self.itemsInFridge animated:YES];
-    
 }
+ */
 
 -(void)setFridge:(Fridge *)fridge
 {
     _fridge = fridge;
     self.title = fridge.name;
     self.itemsInFridge = nil;
-    [self updateMapViewAnnotations];
+  //  [self updateMapViewAnnotations];
 }
 
 -(NSArray *) itemsInFridge
@@ -50,6 +50,11 @@
 {
     [super viewDidLoad];
     self.map.delegate = self;
+    [self.view addSubview:self.map];
+    self.otherFridge.delegate = self;
+    [self.view addSubview:self.otherFridge];
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -58,10 +63,11 @@
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
     [self.map setRegion:[self.map regionThatFits:region] animated:YES];
-    
     MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
     point1.coordinate = userLocation.coordinate;
     point1.title = @"Dianne's Fridge";
+    [self.map addAnnotation:point1];
+  
     
     
   //  point1.subtitle = @"";
@@ -81,6 +87,7 @@
 {
     NSLog (@"annotation selected");
     
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -88,8 +95,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
 
     cell.textLabel.text= @"working!";
     cell.backgroundColor = [UIColor blueColor];

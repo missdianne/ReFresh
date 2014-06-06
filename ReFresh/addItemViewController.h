@@ -18,7 +18,7 @@
 #define DONE_ADDING_PHOTO_UNWIND_SEGUE_IDENTIFER @"Done Adding Photo"
 
 @property (nonatomic, strong) Item* addedItem;
-
+@property (nonatomic, strong) NSString *fridge;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
