@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F44FDAF1932800E00E44C23 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDAD1932800E00E44C23 /* Model.xcdatamodeld */; };
+		1F44FDC21932863700E44C23 /* ReFreshDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDC11932863700E44C23 /* ReFreshDatabase.m */; };
+		1F44FDC51932896500E44C23 /* Item+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDC41932896500E44C23 /* Item+Create.m */; };
+		1F44FDCE19329B7000E44C23 /* NutritionGroup+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDCD19329B7000E44C23 /* NutritionGroup+Create.m */; };
+		1F44FDD219329E2B00E44C23 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDD119329E2B00E44C23 /* CoreDataTableViewController.m */; };
+		1F44FDD51932A63C00E44C23 /* MyFridgeCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDD41932A63C00E44C23 /* MyFridgeCDTVC.m */; };
+		1F44FDE419340A7300E44C23 /* addItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F44FDE319340A7300E44C23 /* addItemViewController.m */; };
+		1F509753194193D8003AC609 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509752194193D8003AC609 /* Item.m */; };
+		1F509756194193D9003AC609 /* NutritionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509755194193D9003AC609 /* NutritionGroup.m */; };
+		1F509759194193D9003AC609 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F509758194193D9003AC609 /* Fridge.m */; };
+		1F50975C194193D9003AC609 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F50975B194193D9003AC609 /* Recipe.m */; };
+		1F6903F619327ECE00C340F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F519327ECE00C340F2 /* Foundation.framework */; };
+		1F6903F819327ECE00C340F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F719327ECE00C340F2 /* CoreGraphics.framework */; };
+		1F6903FA19327ECE00C340F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F919327ECE00C340F2 /* UIKit.framework */; };
+		1F69040019327ECE00C340F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6903FE19327ECE00C340F2 /* InfoPlist.strings */; };
+		1F69040219327ECE00C340F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69040119327ECE00C340F2 /* main.m */; };
+		1F69040619327ECE00C340F2 /* ReFreshAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69040519327ECE00C340F2 /* ReFreshAppDelegate.m */; };
+		1F69040919327ECE00C340F2 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F69040719327ECE00C340F2 /* Main_iPhone.storyboard */; };
+		1F69040C19327ECE00C340F2 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F69040A19327ECE00C340F2 /* Main_iPad.storyboard */; };
+		1F69040F19327ECE00C340F2 /* ReFreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69040E19327ECE00C340F2 /* ReFreshViewController.m */; };
+		1F69041119327ECE00C340F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F69041019327ECE00C340F2 /* Images.xcassets */; };
+		1F69041819327ECF00C340F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F69041719327ECF00C340F2 /* XCTest.framework */; };
+		1F69041919327ECF00C340F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F519327ECE00C340F2 /* Foundation.framework */; };
+		1F69041A19327ECF00C340F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6903F919327ECE00C340F2 /* UIKit.framework */; };
+		1F69042219327ECF00C340F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F69042019327ECF00C340F2 /* InfoPlist.strings */; };
+		1F69042419327ECF00C340F2 /* ReFreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69042319327ECF00C340F2 /* ReFreshTests.m */; };
+		1F84669719410EAD00FDF1E8 /* FridgeAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84669619410EAD00FDF1E8 /* FridgeAnimationVC.m */; };
+		1F8466BE1941311C00FDF1E8 /* Fridge+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8466BD1941311C00FDF1E8 /* Fridge+Create.m */; };
+		1F8466C11941456A00FDF1E8 /* NearbyFridgesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */; };
+		1FBC621D193AA37B006F59E4 /* SelectedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC621C193AA37B006F59E4 /* SelectedRecipeViewController.m */; };
+		1FCDC76819384841009E9C2A /* RecipeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC76719384841009E9C2A /* RecipeTVC.m */; };
+		1FCDC76B193849D2009E9C2A /* YummlyFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC76A193849D2009E9C2A /* YummlyFetcher.m */; };
+		1FCDC77219394A31009E9C2A /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC77119394A31009E9C2A /* IngredientCollectionViewCell.m */; };
+		1FCDC77519394A94009E9C2A /* IngredientCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC77419394A93009E9C2A /* IngredientCVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F69041B19327ECF00C340F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F6903EA19327ECE00C340F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F6903F119327ECE00C340F2;
+			remoteInfo = ReFresh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F44FDAE1932800E00E44C23 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1F44FDC01932863700E44C23 /* ReFreshDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReFreshDatabase.h; sourceTree = "<group>"; };
+		1F44FDC11932863700E44C23 /* ReFreshDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReFreshDatabase.m; sourceTree = "<group>"; };
+		1F44FDC31932896500E44C23 /* Item+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Create.h"; sourceTree = "<group>"; };
+		1F44FDC41932896500E44C23 /* Item+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Create.m"; sourceTree = "<group>"; };
+		1F44FDCC19329B7000E44C23 /* NutritionGroup+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NutritionGroup+Create.h"; sourceTree = "<group>"; };
+		1F44FDCD19329B7000E44C23 /* NutritionGroup+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NutritionGroup+Create.m"; sourceTree = "<group>"; };
+		1F44FDD019329E2B00E44C23 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = ReFresh/CoreDataTableViewController.h; sourceTree = "<group>"; };
+		1F44FDD119329E2B00E44C23 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = ReFresh/CoreDataTableViewController.m; sourceTree = "<group>"; };
+		1F44FDD31932A63C00E44C23 /* MyFridgeCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFridgeCDTVC.h; sourceTree = "<group>"; };
+		1F44FDD41932A63C00E44C23 /* MyFridgeCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFridgeCDTVC.m; sourceTree = "<group>"; };
+		1F44FDE219340A7300E44C23 /* addItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addItemViewController.h; sourceTree = "<group>"; };
+		1F44FDE319340A7300E44C23 /* addItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addItemViewController.m; sourceTree = "<group>"; };
+		1F509751194193D8003AC609 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		1F509752194193D8003AC609 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		1F509754194193D9003AC609 /* NutritionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionGroup.h; sourceTree = "<group>"; };
+		1F509755194193D9003AC609 /* NutritionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionGroup.m; sourceTree = "<group>"; };
+		1F509757194193D9003AC609 /* Fridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fridge.h; sourceTree = "<group>"; };
+		1F509758194193D9003AC609 /* Fridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fridge.m; sourceTree = "<group>"; };
+		1F50975A194193D9003AC609 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		1F50975B194193D9003AC609 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		1F6903F219327ECE00C340F2 /* ReFresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReFresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F6903F519327ECE00C340F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F6903F719327ECE00C340F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F6903F919327ECE00C340F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F6903FD19327ECE00C340F2 /* ReFresh-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReFresh-Info.plist"; sourceTree = "<group>"; };
+		1F6903FF19327ECE00C340F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F69040119327ECE00C340F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F69040319327ECE00C340F2 /* ReFresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReFresh-Prefix.pch"; sourceTree = "<group>"; };
+		1F69040419327ECE00C340F2 /* ReFreshAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReFreshAppDelegate.h; sourceTree = "<group>"; };
+		1F69040519327ECE00C340F2 /* ReFreshAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReFreshAppDelegate.m; sourceTree = "<group>"; };
+		1F69040819327ECE00C340F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		1F69040B19327ECE00C340F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1F69040D19327ECE00C340F2 /* ReFreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReFreshViewController.h; sourceTree = "<group>"; };
+		1F69040E19327ECE00C340F2 /* ReFreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReFreshViewController.m; sourceTree = "<group>"; };
+		1F69041019327ECE00C340F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F69041619327ECF00C340F2 /* ReFreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReFreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F69041719327ECF00C340F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1F69041F19327ECF00C340F2 /* ReFreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ReFreshTests-Info.plist"; sourceTree = "<group>"; };
+		1F69042119327ECF00C340F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1F69042319327ECF00C340F2 /* ReFreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReFreshTests.m; sourceTree = "<group>"; };
+		1F84669519410EAD00FDF1E8 /* FridgeAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FridgeAnimationVC.h; sourceTree = "<group>"; };
+		1F84669619410EAD00FDF1E8 /* FridgeAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FridgeAnimationVC.m; sourceTree = "<group>"; };
+		1F8466BC1941311C00FDF1E8 /* Fridge+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Fridge+Create.h"; sourceTree = "<group>"; };
+		1F8466BD1941311C00FDF1E8 /* Fridge+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Fridge+Create.m"; sourceTree = "<group>"; };
+		1F8466BF1941456A00FDF1E8 /* NearbyFridgesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyFridgesVC.h; sourceTree = "<group>"; };
+		1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFridgesVC.m; sourceTree = "<group>"; };
+		1FBC621B193AA37B006F59E4 /* SelectedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRecipeViewController.h; sourceTree = "<group>"; };
+		1FBC621C193AA37B006F59E4 /* SelectedRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRecipeViewController.m; sourceTree = "<group>"; };
+		1FCDC76619384841009E9C2A /* RecipeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTVC.h; sourceTree = "<group>"; };
+		1FCDC76719384841009E9C2A /* RecipeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTVC.m; sourceTree = "<group>"; };
+		1FCDC769193849D2009E9C2A /* YummlyFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyFetcher.h; sourceTree = "<group>"; };
+		1FCDC76A193849D2009E9C2A /* YummlyFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YummlyFetcher.m; sourceTree = "<group>"; };
+		1FCDC77019394A30009E9C2A /* IngredientCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCollectionViewCell.h; sourceTree = "<group>"; };
+		1FCDC77119394A31009E9C2A /* IngredientCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCollectionViewCell.m; sourceTree = "<group>"; };
+		1FCDC77319394A93009E9C2A /* IngredientCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCVC.h; sourceTree = "<group>"; };
+		1FCDC77419394A93009E9C2A /* IngredientCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F6903EF19327ECE00C340F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F6903F819327ECE00C340F2 /* CoreGraphics.framework in Frameworks */,
+				1F6903FA19327ECE00C340F2 /* UIKit.framework in Frameworks */,
+				1F6903F619327ECE00C340F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F69041319327ECF00C340F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F69041819327ECF00C340F2 /* XCTest.framework in Frameworks */,
+				1F69041A19327ECF00C340F2 /* UIKit.framework in Frameworks */,
+				1F69041919327ECF00C340F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F44FDB01932826C00E44C23 /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F44FDAD1932800E00E44C23 /* Model.xcdatamodeld */,
+				1F50975A194193D9003AC609 /* Recipe.h */,
+				1F50975B194193D9003AC609 /* Recipe.m */,
+				1F509757194193D9003AC609 /* Fridge.h */,
+				1F509758194193D9003AC609 /* Fridge.m */,
+				1F509754194193D9003AC609 /* NutritionGroup.h */,
+				1F509755194193D9003AC609 /* NutritionGroup.m */,
+				1F509751194193D8003AC609 /* Item.h */,
+				1F509752194193D8003AC609 /* Item.m */,
+				1F8466BC1941311C00FDF1E8 /* Fridge+Create.h */,
+				1F8466BD1941311C00FDF1E8 /* Fridge+Create.m */,
+				1F44FDCC19329B7000E44C23 /* NutritionGroup+Create.h */,
+				1F44FDCD19329B7000E44C23 /* NutritionGroup+Create.m */,
+				1F44FDC31932896500E44C23 /* Item+Create.h */,
+				1F44FDC41932896500E44C23 /* Item+Create.m */,
+			);
+			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		1F6903E919327ECE00C340F2 = {
+			isa = PBXGroup;
+			children = (
+				1F6903FB19327ECE00C340F2 /* ReFresh */,
+				1F69041D19327ECF00C340F2 /* ReFreshTests */,
+				1F6903F419327ECE00C340F2 /* Frameworks */,
+				1F6903F319327ECE00C340F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F6903F319327ECE00C340F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F6903F219327ECE00C340F2 /* ReFresh.app */,
+				1F69041619327ECF00C340F2 /* ReFreshTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F6903F419327ECE00C340F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F6903F519327ECE00C340F2 /* Foundation.framework */,
+				1F6903F719327ECE00C340F2 /* CoreGraphics.framework */,
+				1F6903F919327ECE00C340F2 /* UIKit.framework */,
+				1F69041719327ECF00C340F2 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F6903FB19327ECE00C340F2 /* ReFresh */ = {
+			isa = PBXGroup;
+			children = (
+				1FA1D5491941980D00FC9550 /* CDTVC */,
+				1F69040719327ECE00C340F2 /* Main_iPhone.storyboard */,
+				1F8466BF1941456A00FDF1E8 /* NearbyFridgesVC.h */,
+				1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */,
+				1F84669519410EAD00FDF1E8 /* FridgeAnimationVC.h */,
+				1F84669619410EAD00FDF1E8 /* FridgeAnimationVC.m */,
+				1FBC621B193AA37B006F59E4 /* SelectedRecipeViewController.h */,
+				1FBC621C193AA37B006F59E4 /* SelectedRecipeViewController.m */,
+				1FCDC77319394A93009E9C2A /* IngredientCVC.h */,
+				1FCDC77419394A93009E9C2A /* IngredientCVC.m */,
+				1FCDC77019394A30009E9C2A /* IngredientCollectionViewCell.h */,
+				1FCDC77119394A31009E9C2A /* IngredientCollectionViewCell.m */,
+				1FCDC76619384841009E9C2A /* RecipeTVC.h */,
+				1FCDC76719384841009E9C2A /* RecipeTVC.m */,
+				1F44FDD31932A63C00E44C23 /* MyFridgeCDTVC.h */,
+				1F44FDD41932A63C00E44C23 /* MyFridgeCDTVC.m */,
+				1F44FDE219340A7300E44C23 /* addItemViewController.h */,
+				1F44FDE319340A7300E44C23 /* addItemViewController.m */,
+				1F69040A19327ECE00C340F2 /* Main_iPad.storyboard */,
+				1F44FDC01932863700E44C23 /* ReFreshDatabase.h */,
+				1F44FDC11932863700E44C23 /* ReFreshDatabase.m */,
+				1F44FDB01932826C00E44C23 /* Core Data Model */,
+				1F69040D19327ECE00C340F2 /* ReFreshViewController.h */,
+				1F69040E19327ECE00C340F2 /* ReFreshViewController.m */,
+				1FCDC76C193930AE009E9C2A /* Yummly Fetcher */,
+				1F69041019327ECE00C340F2 /* Images.xcassets */,
+				1F6903FC19327ECE00C340F2 /* Supporting Files */,
+			);
+			path = ReFresh;
+			sourceTree = "<group>";
+		};
+		1F6903FC19327ECE00C340F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F69040419327ECE00C340F2 /* ReFreshAppDelegate.h */,
+				1F69040519327ECE00C340F2 /* ReFreshAppDelegate.m */,
+				1F6903FD19327ECE00C340F2 /* ReFresh-Info.plist */,
+				1F69040119327ECE00C340F2 /* main.m */,
+				1F6903FE19327ECE00C340F2 /* InfoPlist.strings */,
+				1F69040319327ECE00C340F2 /* ReFresh-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F69041D19327ECF00C340F2 /* ReFreshTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F69042319327ECF00C340F2 /* ReFreshTests.m */,
+				1F69041E19327ECF00C340F2 /* Supporting Files */,
+			);
+			path = ReFreshTests;
+			sourceTree = "<group>";
+		};
+		1F69041E19327ECF00C340F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F69041F19327ECF00C340F2 /* ReFreshTests-Info.plist */,
+				1F69042019327ECF00C340F2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FA1D5491941980D00FC9550 /* CDTVC */ = {
+			isa = PBXGroup;
+			children = (
+				1F44FDD019329E2B00E44C23 /* CoreDataTableViewController.h */,
+				1F44FDD119329E2B00E44C23 /* CoreDataTableViewController.m */,
+			);
+			name = CDTVC;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1FCDC76C193930AE009E9C2A /* Yummly Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				1FCDC769193849D2009E9C2A /* YummlyFetcher.h */,
+				1FCDC76A193849D2009E9C2A /* YummlyFetcher.m */,
+			);
+			name = "Yummly Fetcher";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F6903F119327ECE00C340F2 /* ReFresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F69042719327ECF00C340F2 /* Build configuration list for PBXNativeTarget "ReFresh" */;
+			buildPhases = (
+				1F6903EE19327ECE00C340F2 /* Sources */,
+				1F6903EF19327ECE00C340F2 /* Frameworks */,
+				1F6903F019327ECE00C340F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReFresh;
+			productName = ReFresh;
+			productReference = 1F6903F219327ECE00C340F2 /* ReFresh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F69041519327ECF00C340F2 /* ReFreshTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F69042A19327ECF00C340F2 /* Build configuration list for PBXNativeTarget "ReFreshTests" */;
+			buildPhases = (
+				1F69041219327ECF00C340F2 /* Sources */,
+				1F69041319327ECF00C340F2 /* Frameworks */,
+				1F69041419327ECF00C340F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F69041C19327ECF00C340F2 /* PBXTargetDependency */,
+			);
+			name = ReFreshTests;
+			productName = ReFreshTests;
+			productReference = 1F69041619327ECF00C340F2 /* ReFreshTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F6903EA19327ECE00C340F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ReFresh;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = CS193P;
+				TargetAttributes = {
+					1F69041519327ECF00C340F2 = {
+						TestTargetID = 1F6903F119327ECE00C340F2;
+					};
+				};
+			};
+			buildConfigurationList = 1F6903ED19327ECE00C340F2 /* Build configuration list for PBXProject "ReFresh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F6903E919327ECE00C340F2;
+			productRefGroup = 1F6903F319327ECE00C340F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F6903F119327ECE00C340F2 /* ReFresh */,
+				1F69041519327ECF00C340F2 /* ReFreshTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F6903F019327ECE00C340F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F69040C19327ECE00C340F2 /* Main_iPad.storyboard in Resources */,
+				1F69041119327ECE00C340F2 /* Images.xcassets in Resources */,
+				1F69040919327ECE00C340F2 /* Main_iPhone.storyboard in Resources */,
+				1F69040019327ECE00C340F2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F69041419327ECF00C340F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F69042219327ECF00C340F2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F6903EE19327ECE00C340F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F509759194193D9003AC609 /* Fridge.m in Sources */,
+				1F509753194193D8003AC609 /* Item.m in Sources */,
+				1F44FDD51932A63C00E44C23 /* MyFridgeCDTVC.m in Sources */,
+				1F509756194193D9003AC609 /* NutritionGroup.m in Sources */,
+				1FBC621D193AA37B006F59E4 /* SelectedRecipeViewController.m in Sources */,
+				1F44FDCE19329B7000E44C23 /* NutritionGroup+Create.m in Sources */,
+				1FCDC76B193849D2009E9C2A /* YummlyFetcher.m in Sources */,
+				1FCDC77219394A31009E9C2A /* IngredientCollectionViewCell.m in Sources */,
+				1FCDC76819384841009E9C2A /* RecipeTVC.m in Sources */,
+				1F44FDC21932863700E44C23 /* ReFreshDatabase.m in Sources */,
+				1F84669719410EAD00FDF1E8 /* FridgeAnimationVC.m in Sources */,
+				1F69040619327ECE00C340F2 /* ReFreshAppDelegate.m in Sources */,
+				1F44FDD219329E2B00E44C23 /* CoreDataTableViewController.m in Sources */,
+				1F8466C11941456A00FDF1E8 /* NearbyFridgesVC.m in Sources */,
+				1F50975C194193D9003AC609 /* Recipe.m in Sources */,
+				1F69040F19327ECE00C340F2 /* ReFreshViewController.m in Sources */,
+				1F69040219327ECE00C340F2 /* main.m in Sources */,
+				1F44FDE419340A7300E44C23 /* addItemViewController.m in Sources */,
+				1F44FDC51932896500E44C23 /* Item+Create.m in Sources */,
+				1F8466BE1941311C00FDF1E8 /* Fridge+Create.m in Sources */,
+				1F44FDAF1932800E00E44C23 /* Model.xcdatamodeld in Sources */,
+				1FCDC77519394A94009E9C2A /* IngredientCVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F69041219327ECF00C340F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F69042419327ECF00C340F2 /* ReFreshTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F69041C19327ECF00C340F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F6903F119327ECE00C340F2 /* ReFresh */;
+			targetProxy = 1F69041B19327ECF00C340F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F6903FE19327ECE00C340F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F6903FF19327ECE00C340F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1F69040719327ECE00C340F2 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F69040819327ECE00C340F2 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		1F69040A19327ECE00C340F2 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F69040B19327ECE00C340F2 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		1F69042019327ECF00C340F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F69042119327ECF00C340F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F69042519327ECF00C340F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F69042619327ECF00C340F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F69042819327ECF00C340F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
+				INFOPLIST_FILE = "ReFresh/ReFresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1F69042919327ECF00C340F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
+				INFOPLIST_FILE = "ReFresh/ReFresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1F69042B19327ECF00C340F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ReFresh.app/ReFresh";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ReFreshTests/ReFreshTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1F69042C19327ECF00C340F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ReFresh.app/ReFresh";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
+				INFOPLIST_FILE = "ReFreshTests/ReFreshTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F6903ED19327ECE00C340F2 /* Build configuration list for PBXProject "ReFresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F69042519327ECF00C340F2 /* Debug */,
+				1F69042619327ECF00C340F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F69042719327ECF00C340F2 /* Build configuration list for PBXNativeTarget "ReFresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F69042819327ECF00C340F2 /* Debug */,
+				1F69042919327ECF00C340F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F69042A19327ECF00C340F2 /* Build configuration list for PBXNativeTarget "ReFreshTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F69042B19327ECF00C340F2 /* Debug */,
+				1F69042C19327ECF00C340F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F44FDAD1932800E00E44C23 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F44FDAE1932800E00E44C23 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1F44FDAE1932800E00E44C23 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "Core Data Model/Model.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1F6903EA19327ECE00C340F2 /* Project object */;
+}

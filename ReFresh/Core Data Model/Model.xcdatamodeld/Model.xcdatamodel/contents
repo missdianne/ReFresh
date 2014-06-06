@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Fridge" representedClassName="Fridge" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="includedIn" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="dateExpire" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dateOpen" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="myNG" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nearExpire" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="servingSize" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="servingType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NutritionGroup" inverseName="items" inverseEntity="NutritionGroup" syncable="YES"/>
+        <relationship name="includedIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fridge" inverseName="has" inverseEntity="Fridge" syncable="YES"/>
+    </entity>
+    <entity name="NutritionGroup" representedClassName="NutritionGroup" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="belongTo" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="thumbNail" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fridge" positionX="9" positionY="108" width="128" height="88"/>
+        <element name="Item" positionX="133" positionY="5" width="128" height="195"/>
+        <element name="NutritionGroup" positionX="-54" positionY="36" width="128" height="88"/>
+        <element name="Recipe" positionX="-108" positionY="138" width="128" height="118"/>
+    </elements>
+</model>
