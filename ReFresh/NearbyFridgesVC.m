@@ -7,9 +7,10 @@
 //
 
 #import "NearbyFridgesVC.h"
+#import "ReFreshDatabase.h"
 
 @interface NearbyFridgesVC ()
-@property (nonatomic, strong) NSArray *itemsInFridge;
+@property (nonatomic, strong) NSMutableArray *itemsInFridge;
 
 
 @end
@@ -27,6 +28,13 @@
 }
  */
 
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    _managedObjectContext = managedObjectContext;
+    // sleep(10);
+    //  [self fetchFridge];
+}
+
 -(void)setFridge:(Fridge *)fridge
 {
     _fridge = fridge;
@@ -35,13 +43,11 @@
   //  [self updateMapViewAnnotations];
 }
 
--(NSArray *) itemsInFridge
+-(NSMutableArray *) itemsInFridge
 {
     if (!_itemsInFridge)
     {
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Item"];
-        request.predicate = [NSPredicate predicateWithFormat: @"includedIn = %@", self.fridge];
-        _itemsInFridge = [self.fridge.managedObjectContext executeFetchRequest:request error:NULL];
+        _itemsInFridge = [[NSMutableArray alloc]init];
     }
     return _itemsInFridge;
 }
@@ -54,57 +60,124 @@
     self.otherFridge.delegate = self;
     [self.view addSubview:self.otherFridge];
     
-    
+//
+  
     // Do any additional setup after loading the view.
 }
 
 
--(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.map setRegion:[self.map regionThatFits:region] animated:YES];
-    MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
-    point1.coordinate = userLocation.coordinate;
-    point1.title = @"Dianne's Fridge";
-    [self.map addAnnotation:point1];
-  
-    
-    
-  //  point1.subtitle = @"";
-    /*
-    MKPointAnnotation *point2 = [[MKPointAnnotation alloc] init];
-    point2.coordinate.longitude = userLocation.coordinate.longitude- 100;
-    point2.coordinate.latitude = userLocation.coordinate.latitude-50;
-    point2.title = @"Taylor's Fridge";
-    point2.subtitle = @"I'm here!!!";
 
-    point2.
-     */
+-(void)viewDidAppear:(BOOL)animated
+{
+    CLLocationCoordinate2D  point1;
+    point1.latitude = 37.4260719;
+    point1.longitude = -122.1522775;
     
+    MKPointAnnotation *pointA = [[MKPointAnnotation alloc] init];
+    pointA.coordinate = point1;
+    pointA.title = @"dianne";
+    [self.map addAnnotation:pointA];
+    
+    
+    //37.4224761,-122.1463721
+    CLLocationCoordinate2D  point2;
+    point2.latitude = 37.4224761;
+    point2.longitude = -122.1463721;
+    
+    MKPointAnnotation *pointB = [[MKPointAnnotation alloc] init];
+    pointB.coordinate = point2;
+    pointB.title = @"taylor";
+    [self.map addAnnotation:pointB];
+    
+    
+    
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(pointA.coordinate, 800,800);
+    [self.map setRegion:[self.map regionThatFits:region] animated:YES];
+    
+    ReFreshDatabase *rdb = [ReFreshDatabase sharedDefaultReFreshDatabase];
+    if (rdb.managedObjectContext) {
+        self.managedObjectContext = rdb.managedObjectContext;
+        [self fetchFridgewithName: @"dianne"];
+        
+    } else {
+        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:ReFreshDatabaseAvailable
+                                                                        object: rdb
+                                                                         queue:[NSOperationQueue mainQueue]
+                                                                    usingBlock:^(NSNotification *note) {
+                                                                        self.managedObjectContext = rdb.managedObjectContext;
+                                                                        [[NSNotificationCenter defaultCenter] removeObserver:observer];
+                                                                    }];
+        //[self fetchFridge];
+    }
+    [self.otherFridge reloadData];
 }
+
+-(void) fetchFridgewithName: (NSString *)name
+{
+    if (self.managedObjectContext) {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Item"];
+        
+        request.predicate = [NSPredicate predicateWithFormat:@"includedIn.name == %@", name]; // for my fridge
+        
+        request.sortDescriptors = [NSArray arrayWithObject: [NSSortDescriptor sortDescriptorWithKey:@"name" ascending: YES]];
+        NSError *error = nil;
+        NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+        [self addItemsToFridge: results];
+       } else {
+        self.fetchedResultsController = nil;
+    }
+}
+
+
+-(void) addItemsToFridge: (NSArray *) results
+{
+    for (Item *item in results)
+    {
+        [self.itemsInFridge addObject:item];
+    }
+}
+
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    NSLog (@"annotation selected");
-    
-    
+    if ([view.annotation.title  isEqual: @"dianne"])
+    {
+        [self.itemsInFridge removeAllObjects];
+        [self fetchFridgewithName:@"dianne"];
+        [self.otherFridge reloadData];
+        self.otherFridge.backgroundColor =  [UIColor colorWithRed:255/255.0f green:221/255.0f blue:9/255.0f alpha:1.0f];
+    }
+    if ([view.annotation.title  isEqual: @"taylor"])
+    {
+        [self.itemsInFridge removeAllObjects];
+        [self fetchFridgewithName:@"taylor"];
+        [self.otherFridge reloadData];
+        self.otherFridge.backgroundColor = [UIColor colorWithRed:124/255.0f green:179/255.0f blue:219/255.0f alpha:1.0f];
+
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"shared fridge contents"];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
 
-    cell.textLabel.text= @"working!";
-    cell.backgroundColor = [UIColor blueColor];
+    Item *item = [self.itemsInFridge objectAtIndex:indexPath.row];
+    cell.textLabel.text= item.name ;
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return [self.itemsInFridge count];
 }
 
 

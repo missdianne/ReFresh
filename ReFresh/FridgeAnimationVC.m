@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fridgeBottom;
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UIImageView *lemon;
 
 @end
 
@@ -58,7 +59,7 @@
                      completion:^(BOOL finished){
                        
                      }];
-
+    
 }
     // Do any additional setup after loading the view.
 

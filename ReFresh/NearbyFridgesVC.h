@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Fridge+Create.h"
+#import "Item.h"
 
 @interface NearbyFridgesVC : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) Fridge *fridge;
 @property (strong, nonatomic) IBOutlet UITableView *otherFridge;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

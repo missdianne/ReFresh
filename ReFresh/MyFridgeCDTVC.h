@@ -12,5 +12,7 @@
 
 @interface MyFridgeCDTVC : CoreDataTableViewController
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSString *fridgeName;
+
 
 @end

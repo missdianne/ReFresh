@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" alpha="0.5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Food Item" textLabel="EtJ-7i-kMO" detailTextLabel="Xsf-Cl-DM6" rowHeight="37" style="IBUITableViewCellStyleValue1" id="mEB-Qe-CnZ">
+                            <tableViewCell opaque="NO" alpha="0.5" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Food Item" textLabel="EtJ-7i-kMO" detailTextLabel="Xsf-Cl-DM6" rowHeight="37" style="IBUITableViewCellStyleValue1" id="mEB-Qe-CnZ">
                                 <rect key="frame" x="0.0" y="86" width="320" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mEB-Qe-CnZ" id="4tA-nM-mwn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="36"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EtJ-7i-kMO">
@@ -28,7 +28,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="36" id="Xsf-Cl-DM6">
-                                            <rect key="frame" x="269" y="14" width="36" height="12"/>
+                                            <rect key="frame" x="237" y="14" width="36" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,7 +208,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fridge bottom" translatesAutoresizingMaskIntoConstraints="NO" id="o5B-eA-dEt">
-                                <rect key="frame" x="0.0" y="198" width="320" height="371"/>
+                                <rect key="frame" x="0.0" y="197" width="320" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -218,13 +218,32 @@
                     <connections>
                         <outlet property="fridgeBottom" destination="o5B-eA-dEt" id="wF1-cJ-BUr"/>
                         <outlet property="fridgeTop" destination="uRu-gS-UDL" id="cu3-gb-iJv"/>
+                        <outlet property="lemon" destination="oNG-Ax-1JH" id="Xuw-4O-olD"/>
                         <outlet property="name" destination="7Xo-yx-eOR" id="lhH-7F-gjr"/>
                         <outlet property="password" destination="fKn-CZ-uGn" id="s79-t3-5RZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsx-Lu-4UQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1183" y="552"/>
+            <point key="canvasLocation" x="-1243" y="604"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vRI-QP-b60">
+            <objects>
+                <viewController id="fOD-X1-GA0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NdQ-fu-cLo"/>
+                        <viewControllerLayoutGuide type="bottom" id="2TH-Ms-UZh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5J9-aQ-hv7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L3Z-VN-cq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="-749"/>
         </scene>
         <!--Navigation Controller - My Fridge-->
         <scene sceneID="zP8-zr-3A6">
@@ -339,16 +358,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8Y-BP-orj">
-                                <rect key="frame" x="-4" y="0.0" width="339" height="346"/>
+                                <rect key="frame" x="-4" y="0.0" width="339" height="314"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9lH-Hh-b0G">
-                                <rect key="frame" x="0.0" y="346" width="320" height="222"/>
+                                <rect key="frame" x="0.0" y="313" width="320" height="255"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" textLabel="d4w-2E-eMY" style="IBUITableViewCellStyleDefault" id="0Ju-8L-FIJ">
+                                    <tableViewCell alpha="0.5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemCell" textLabel="d4w-2E-eMY" style="IBUITableViewCellStyleDefault" id="0Ju-8L-FIJ">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Ju-8L-FIJ" id="m1R-lQ-BFG">
@@ -364,6 +383,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -480,11 +500,11 @@
             </objects>
             <point key="canvasLocation" x="560" y="648"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Borrow-->
         <scene sceneID="may-Z5-KQi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qGJ-5K-0fd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vPj-9B-nea"/>
+                    <tabBarItem key="tabBarItem" title="Borrow" image="map-pin" id="vPj-9B-nea"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S6o-rN-sZ6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -506,6 +526,7 @@
         <image name="fridge top" width="295" height="227"/>
         <image name="grape" width="30" height="30"/>
         <image name="lemon-2" width="604" height="582"/>
+        <image name="map-pin" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

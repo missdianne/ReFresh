@@ -185,7 +185,6 @@
         request.sortDescriptors = [NSArray arrayWithObject: [NSSortDescriptor sortDescriptorWithKey:@"name" ascending: YES]];
         NSError *error = nil;
         NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-    //    NSLog (@"results array is %@", results);
         [self addItemsToFridge: results];
 
      //   [request setFetchBatchSize:20];

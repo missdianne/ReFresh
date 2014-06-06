@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *fetchedNGs;
 @property (nonatomic) Boolean toDelete;
 @property (strong, nonatomic) EKEventStore *eventStore;
-@property (nonatomic, strong) NSString *fridgeName;
 
 @end
 
@@ -230,7 +229,7 @@
         if (item.nearExpire ==0){
           [self addReminderEventForItem:item];
         item.nearExpire = [NSNumber numberWithInt:1];
-            [self alert:[NSString stringWithFormat:@"%@ is about to expire! added it to your Reminders", item.name]];
+            [self alert:[NSString stringWithFormat:@"%@ is about to expire! ReFresh added it to your Reminders", item.name]];
         }
     }
     
