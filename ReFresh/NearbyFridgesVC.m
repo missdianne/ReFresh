@@ -9,9 +9,9 @@
 #import "NearbyFridgesVC.h"
 #import "ReFreshDatabase.h"
 
-@interface NearbyFridgesVC ()
+@interface NearbyFridgesVC () 
 @property (nonatomic, strong) NSMutableArray *itemsInFridge;
-
+@property (nonatomic, strong) NSMutableArray *allFridges;
 
 @end
 
@@ -33,6 +33,14 @@
     _managedObjectContext = managedObjectContext;
     // sleep(10);
     //  [self fetchFridge];
+}
+
+-(NSMutableArray *)allFridges{
+    if (!_allFridges)
+    {
+        _allFridges = [[NSMutableArray alloc]init];
+    }
+    return _allFridges;
 }
 
 -(void)setFridge:(Fridge *)fridge
@@ -59,7 +67,7 @@
     [self.view addSubview:self.map];
     self.otherFridge.delegate = self;
     [self.view addSubview:self.otherFridge];
-    
+    self.allFridges  = nil;
 //
   
     // Do any additional setup after loading the view.
@@ -69,36 +77,14 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    CLLocationCoordinate2D  point1;
-    point1.latitude = 37.4260719;
-    point1.longitude = -122.1522775;
-    
-    MKPointAnnotation *pointA = [[MKPointAnnotation alloc] init];
-    pointA.coordinate = point1;
-    pointA.title = @"dianne";
-    [self.map addAnnotation:pointA];
-    
-    
-    //37.4224761,-122.1463721
-    CLLocationCoordinate2D  point2;
-    point2.latitude = 37.4224761;
-    point2.longitude = -122.1463721;
-    
-    MKPointAnnotation *pointB = [[MKPointAnnotation alloc] init];
-    pointB.coordinate = point2;
-    pointB.title = @"taylor";
-    [self.map addAnnotation:pointB];
-    
-    
-    
-    
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(pointA.coordinate, 800,800);
-    [self.map setRegion:[self.map regionThatFits:region] animated:YES];
+
     
     ReFreshDatabase *rdb = [ReFreshDatabase sharedDefaultReFreshDatabase];
     if (rdb.managedObjectContext) {
         self.managedObjectContext = rdb.managedObjectContext;
-        [self fetchFridgewithName: @"dianne"];
+        [self setupFridges];
+        Fridge *first = [self.allFridges firstObject];
+        [self fetchFridgewithName: first.name];
         
     } else {
         id observer = [[NSNotificationCenter defaultCenter] addObserverForName:ReFreshDatabaseAvailable
@@ -110,7 +96,53 @@
                                                                     }];
         //[self fetchFridge];
     }
+    if (self.allFridges)
+    {
+        Fridge *first = [self.allFridges firstObject];
+        CLLocationCoordinate2D  point2;
+        point2.latitude = (CLLocationDegrees)[first.latitude doubleValue];
+        point2.longitude = (CLLocationDegrees) [first.longitude doubleValue];
+        
+        MKPointAnnotation *pointB = [[MKPointAnnotation alloc] init];
+        pointB.coordinate = point2;
+        pointB.title = first.name;
+        [self.map addAnnotation:pointB];
+        
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(pointB.coordinate, 800,800);
+        [self.map setRegion:[self.map regionThatFits:region] animated:YES];
+    }
     [self.otherFridge reloadData];
+}
+
+
+-(void)setupFridges
+{
+    if(self.managedObjectContext)
+    {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Fridge"];
+        
+        request.predicate = nil; //all fridges
+        request.sortDescriptors = [NSArray arrayWithObject: [NSSortDescriptor sortDescriptorWithKey:@"name" ascending: YES]];
+        NSError *error = nil;
+        NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+        for (Fridge *fridge in results)
+        {
+            [self.allFridges addObject:fridge];
+            CLLocationCoordinate2D  point2;
+            point2.latitude = (CLLocationDegrees)[fridge.latitude doubleValue];
+            point2.longitude = (CLLocationDegrees) [fridge.longitude doubleValue];
+            
+            MKPointAnnotation *pointB = [[MKPointAnnotation alloc] init];
+            pointB.coordinate = point2;
+            pointB.title = fridge.name;
+            [self.map addAnnotation:pointB];
+         //   NSLog (@"NEARBY FRIDGES------add current fridge %@  to location %f", pointB.title, pointB.coordinate.latitude);
+
+        }
+    }
+    else{
+        self.fetchedResultsController = nil;
+    }
 }
 
 -(void) fetchFridgewithName: (NSString *)name
@@ -141,21 +173,17 @@
 
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    if ([view.annotation.title  isEqual: @"dianne"])
-    {
         [self.itemsInFridge removeAllObjects];
-        [self fetchFridgewithName:@"dianne"];
+        [self fetchFridgewithName:view.annotation.title];
         [self.otherFridge reloadData];
-        self.otherFridge.backgroundColor =  [UIColor colorWithRed:255/255.0f green:221/255.0f blue:9/255.0f alpha:1.0f];
-    }
-    if ([view.annotation.title  isEqual: @"taylor"])
-    {
-        [self.itemsInFridge removeAllObjects];
-        [self fetchFridgewithName:@"taylor"];
-        [self.otherFridge reloadData];
-        self.otherFridge.backgroundColor = [UIColor colorWithRed:124/255.0f green:179/255.0f blue:219/255.0f alpha:1.0f];
-
-    }
+    
+        if ([view.annotation.title  isEqual: @"dianne"])
+        {
+        self.otherFridge.backgroundColor= [UIColor colorWithRed:255/255.0f green:233/255.0f blue:98/255.0f alpha:1.0f];
+        }
+        else{
+        self.otherFridge.backgroundColor = [UIColor colorWithRed:101/255.0f green:197/255.0f blue:241/255.0f alpha:1.0f];
+        }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -173,8 +201,35 @@
 
     Item *item = [self.itemsInFridge objectAtIndex:indexPath.row];
     cell.textLabel.text= item.name ;
+    
+    /*UIButton *borrow = [[UIButton alloc]initWithFrame:CGRectMake(5,5,40,40)];
+        borrow = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [borrow setTitle:@"Borrow" forState:UIControlStateNormal];
+    borrow.backgroundColor = [UIColor blackColor];
+    [cell addSubview:borrow];
+    [tableView cellForRowAtIndexPath:indexPath].accessoryView = borrow;
+    
+    cell.accessoryView = borrow;
+     */
+    //  NSLog(@"button is %@t,superview is %@", borrow.titleLabel, borrow.superview);
+
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+       Item *item = [self.itemsInFridge objectAtIndex:indexPath.row];
+    NSString *msg = [NSString stringWithFormat:@"borrowing %@ ", item.name];
+                     
+    [[[UIAlertView alloc] initWithTitle:@"ReFresh--borrow"
+                                message:msg
+                               delegate:nil
+                      cancelButtonTitle:nil
+                      otherButtonTitles:@"OK", nil] show];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.itemsInFridge count];

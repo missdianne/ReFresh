@@ -27,12 +27,28 @@
         fridge = [NSEntityDescription insertNewObjectForEntityForName:@"Fridge"
                                              inManagedObjectContext:context];
         fridge.name = name;
+    
     }
         else {
             fridge = [matches firstObject];
         }
-        // NSLog(@"added item: %@", item.name);
         return fridge;
 }
+
+
+
++(Fridge *) fridgeWithInfo: (NSDictionary *)fridgeDictionary inManagedContext: (NSManagedObjectContext *) context
+{
+    NSString *name = [fridgeDictionary valueForKeyPath:@"name"];
+    Fridge *fridge = [self itemWithInfo:name inManagedObjectContext:context];
+    fridge.latitude = [fridgeDictionary valueForKeyPath:@"latitude"];
+    fridge.longitude = [fridgeDictionary valueForKeyPath:@"longitude"];
+   
+    
+    
+    return fridge;
+    
+}
+
 
 @end

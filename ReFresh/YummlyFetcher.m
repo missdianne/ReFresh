@@ -19,7 +19,7 @@
 + (NSURL *)URLforRecipes:(NSArray *)ingredients maxResults:(int)maxResults
 {
     NSString *ingreString = [ingredients componentsJoinedByString:@"&allowedIngredient[]="];
-    NSLog(@"ingredients searched %@", ingreString);
+ //   NSLog(@"ingredients searched %@", ingreString);
     
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://api.yummly.com/v1/api/recipes?_app_id=%@&_app_key=%@&maxResult=%i&allowedIngredient[]=%@&requirePictures=true", API_ID, API_KEY, maxResults, ingreString]];
 }

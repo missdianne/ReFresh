@@ -10,7 +10,7 @@
 #import "SelectedRecipeViewController.h"
 
 @interface RecipeTVC ()
-
+@property (strong, nonatomic) NSData *lastPhoto;
 @end
 
 @implementation RecipeTVC
@@ -59,7 +59,7 @@
 {
     
     NSURL *url = [YummlyFetcher URLforRecipes:self.includedIngredients maxResults:50];
-    NSLog(@"url is %@", url);
+   // NSLog(@"url is %@", url);
     [self.refreshControl beginRefreshing];
   
     dispatch_queue_t fetchQueue = dispatch_queue_create("recipe search fetch", NULL);
@@ -78,11 +78,11 @@
         NSArray *recipes = [propertyListResults valueForKeyPath: @"matches"];
         
         
-         NSLog(@"propertyList results: %@", propertyListResults);
+      //   NSLog(@"propertyList results: %@", propertyListResults);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.refreshControl endRefreshing];
             self.resultRecipes = recipes;
-            NSLog(@"Array length %lu", (unsigned long)[recipes count]);
+           // NSLog(@"Array length %lu", (unsigned long)[recipes count]);
             [self.tableView reloadData];
             //NSLog(@"all places%@", self.places);
         });
@@ -100,7 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"num of results returned %lu", (unsigned long)[self.resultRecipes count]);
+   // NSLog(@"num of results returned %lu", (unsigned long)[self.resultRecipes count]);
     return [self.resultRecipes count];
 }
 
@@ -115,16 +115,16 @@
     cell.textLabel.text = [arecipe valueForKeyPath:RECIPE_NAME];
   //  NSLog (@"cell text %@", cell.textLabel.text);
     NSData *thumbData = [self thumbNailPhoto:arecipe];
-    NSLog (@"numbnail data is %@", thumbData);
+    thumbData = self.lastPhoto ;
+ 
     if (thumbData)
     {
         UIImage *cellImage = [UIImage imageWithData: thumbData];
         cell.imageView.image = cellImage;
-        NSLog(@"there is image in the cell");
     }
 
     NSNumber *ratingNum = [arecipe valueForKeyPath:RECIPE_RATING];
-    NSLog(@"rating is %@", ratingNum);
+   // NSLog(@"rating is %@", ratingNum);
     
     cell.detailTextLabel.text = [NSString stringWithFormat:@"recipe rating: %@", ratingNum];
     cell.detailTextLabel.textColor = [UIColor orangeColor];
@@ -139,7 +139,7 @@
     NSURL *thumbnailURL = [[NSURL alloc]initWithString:thumNail];
     
     __block NSData *image = nil;
-    NSLog(@"thumbnail URL is %@", thumbnailURL);
+  //  NSLog(@"thumbnail URL is %@", thumbnailURL);
 
     if (thumbnailURL)
     {
@@ -162,7 +162,8 @@
                                                                     // but calling "self.image =" is definitely not an exception to that!
                                                                     // so we must dispatch this back to the main queue
                                                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                                                     //   [self.tableView reloadData];
+                                                                      //  [self.tableView reloadData];
+                                                                        self.lastPhoto = image;
                                                                        // NSLog(@"raw thumbnail image %@", image);
                                                                         
                                                                     });
@@ -242,7 +243,7 @@
 -(void) prepareSelectedRecipeViewController: (SelectedRecipeViewController *)srvc toDisplayRecipe: (NSDictionary *) arecipe
 {
     srvc.fullURL = [YummlyFetcher URLofRecipe:arecipe];
-    NSLog(@"taking you to website %@", srvc.fullURL);
+  //  NSLog(@"taking you to website %@", srvc.fullURL);
 }
 
 

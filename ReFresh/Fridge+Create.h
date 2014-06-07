@@ -14,4 +14,7 @@
 + (Fridge *)itemWithInfo:(NSString *)name
 inManagedObjectContext:(NSManagedObjectContext *)context;
 
++(Fridge *) fridgeWithInfo: (NSDictionary *)fridgeDictionary inManagedContext: (NSManagedObjectContext *) context;
+
+
 @end

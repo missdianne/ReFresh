@@ -234,6 +234,7 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDetailButton;
+    
     return cell;
 }
 
@@ -275,15 +276,10 @@
                 
                 NSArray *calendars = [self.eventStore calendarsForEntityType:EKEntityTypeReminder];
                 
-                for (EKCalendar *calendar in calendars)
-                {
-                    NSLog(@"Calendar = %@", calendar.title);
-                }
-                
                 EKCalendar *calendar = [calendars lastObject];
                 EKReminder *myReminder = [EKReminder reminderWithEventStore: self.eventStore];
                 
-                NSLog (@"***new reminder added for %@", item.name);
+             //   NSLog (@"***new reminder added for %@", item.name);
                 
                 NSTimeInterval seconds = [item.dateExpire doubleValue];
                 
@@ -300,14 +296,14 @@
                 NSError *error = nil;
                 [self.eventStore saveReminder:myReminder commit:YES error:&error];
                 
-                  NSLog(@"saving in calendar: %@", myReminder.calendar.title);
+                 // NSLog(@"saving in calendar: %@", myReminder.calendar.title);
              
                 NSTimeInterval timeInterval = 100;
                 NSDate *alarmDate = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
                 EKAlarm *alarm = [EKAlarm alarmWithAbsoluteDate:alarmDate];
                 [myReminder addAlarm:alarm];
                 
-                NSLog(@"added alert");
+              //  NSLog(@"added alert");
                 
                 //  [myReminder setCalendar:[eventStore defaultCalendarForNewEvents]];
                 //               [self performCalendarActivity: eventStore];
@@ -320,7 +316,6 @@
         //code for iOS <6.0
         NSLog(@" older version of iOS");
     }
-    NSLog(@"end of eventkit reached");
 }
 
 

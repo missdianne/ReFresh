@@ -74,22 +74,18 @@
     if (swipe.direction ==UISwipeGestureRecognizerDirectionLeft)
     {
         [self veggieView];
-        NSLog(@"swiped left");
     }
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight)
     {
         [self fruitView];
-        NSLog (@"swiped right");
     }
     if (swipe.direction ==UISwipeGestureRecognizerDirectionUp)
     {
         [self dairyView];
-        NSLog(@"swiped up");
     }
     if (swipe.direction == UISwipeGestureRecognizerDirectionDown)
     {
         [self proteinView];
-        NSLog(@" swiped down");
     }
     
     
@@ -107,7 +103,7 @@
    // [newView addSubview:newImage];
     
     self.NutritionGroup1.image = [UIImage imageNamed: @"dairy.png"];
-    self.view.backgroundColor = [UIColor colorWithRed:189/255.0f green:242/255.0f blue:253/255.0f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:189/255.0f green:242/255.0f blue:253/255.0f alpha:.750f];
     self.servingTypeSegmentedControl.selectedSegmentIndex = 1;
     self.currentNG = @"dairy";
 }
@@ -115,7 +111,7 @@
 -(void)veggieView
 {
     self.NutritionGroup1.image = [UIImage imageNamed: @"veggies.png"];
-    self.view.backgroundColor = [UIColor colorWithRed:69/255.0f green:183/255.0f blue:121/255.0f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:69/255.0f green:183/255.0f blue:121/255.0f alpha:0.75f];
        self.servingTypeSegmentedControl.selectedSegmentIndex = 2;
     self.currentNG = @"veggie";
 }
@@ -123,7 +119,7 @@
 -(void)fruitView
 {
     self.NutritionGroup1.image = [UIImage imageNamed: @"fruits1.png"];
-    self.view.backgroundColor = [UIColor colorWithRed:221/255.0f green:204/255.0f blue:11/255.0f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:221/255.0f green:204/255.0f blue:11/255.0f alpha:0.75f];
        self.servingTypeSegmentedControl.selectedSegmentIndex = 3;
     self.currentNG = @"fruit";
 }
@@ -131,7 +127,7 @@
 -(void)proteinView
 {
     self.NutritionGroup1.image = [UIImage imageNamed:@"protein.png"];
-    self.view.backgroundColor = [UIColor colorWithRed:153/255.0f green:43/255.0f blue:119/255.0f alpha:1.0f];
+    self.view.backgroundColor = [UIColor colorWithRed:153/255.0f green:43/255.0f blue:119/255.0f alpha:0.75f];
        self.servingTypeSegmentedControl.selectedSegmentIndex = 2;
     self.currentNG = @"protein";
 }
@@ -176,8 +172,6 @@
         
         Item *item = [Item itemWithInfo:itemDictionary inManagedObjectContext: self.managedObjectContext];
         
-        NSLog (@"item: %@ has nutrition group %@", item.name, item.belongTo.name);
-    NSLog (@"item %@ is opened on %@ and expires %@", item.name, item.dateOpen, item.dateExpire);
     [self addReminderEventForItem:item];
     
 }
@@ -212,7 +206,7 @@
 
 
 - (IBAction)createItem:(UIButton *)sender {
-    NSLog(@"creating new item in database");
+  //  NSLog(@"creating new item in database");
     if ([self checkItem]){
         [self addItem];
         [self alert:@"Your new item has been added and created in the Reminder list"];

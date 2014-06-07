@@ -15,9 +15,22 @@
 
 @interface ReFreshDatabase()
 @property (nonatomic, readwrite, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSMutableArray *fridges;
 @end
 
 @implementation ReFreshDatabase
+
+
+-(NSMutableArray *)fridges
+{
+    if (!_fridges)
+    {
+        _fridges = [[NSMutableArray alloc] init];
+    }
+    return _fridges;
+}
+
+
 
 + (ReFreshDatabase *)sharedDefaultReFreshDatabase
 {
@@ -68,7 +81,7 @@
             if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
                 [document openWithCompletionHandler:^(BOOL success) {
                     if (success) self.managedObjectContext = document.managedObjectContext;
-                    NSLog(@"opened file");
+               //     NSLog(@"opened file");
                 }];
             } else {
                 [document saveToURL:url
@@ -104,7 +117,7 @@
                 BOOL failure = YES;
             //    NSLog(@"e");
                 NSArray *items = [self test];
-                
+                NSArray *fridges = [self addFridgesWithLocation];
                 if (items)
                 {
                     failure = NO;
@@ -113,6 +126,12 @@
                         {
                             [Item itemWithInfo:itemDictionary inManagedObjectContext:self.managedObjectContext];
                         }
+                        
+                        for (NSDictionary *fridge in fridges)
+                        {
+                            [Fridge fridgeWithInfo:fridge inManagedContext:self.managedObjectContext];
+                        }
+                        
                         
                         if (completionHandler) dispatch_async(dispatch_get_main_queue(), ^{
                             completionHandler(YES);
@@ -139,13 +158,8 @@
     
    // NSDate *today = [[NSDate alloc]init];
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-    NSLog (@"time now: %f", now);
-    
     NSNumber *n = [NSNumber numberWithDouble:now];
-    NSLog (@"time now: %@", n);
-    
-    
-    
+       
     NSDictionary *carrot = @{@"name": @"carrots", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup": @"veggie", @"nearExpire": @0, @"includedIn": @"dianne"};
     NSDictionary *peaches = @{@"name": @"peaches", @"servingSize": @1, @"servingType": @"gallon", @"dateOpen": n, @"NutritionGroup": @"fruit", @"nearExpire": @0, @"includedIn": @"dianne"};
     NSDictionary *swiss = @{@"name": @"swiss", @"servingSize": @1, @"servingType": @"oz", @"dateOpen": n, @"NutritionGroup":@"dairy", @"nearExpire": @0, @"includedIn": @"dianne"};
@@ -180,6 +194,21 @@
    // NSLog (@"test array: %@", testArray);
     return testArray;
 }
+
+-(NSArray *)addFridgesWithLocation
+{
+    NSMutableArray *testFridge = [[NSMutableArray alloc]init];
+   
+    NSDictionary *dianne = @{@"name": @"dianne", @"latitude": @37.4260719, @"longitude": @-122.1522775};
+    NSDictionary *taylor =  @{@"name": @"taylor", @"latitude": @37.4224761, @"longitude": @-122.1463721};
+    
+    [testFridge addObject:dianne];
+    [testFridge addObject:taylor];
+    return testFridge;
+    
+    
+}
+
 
 
 /*

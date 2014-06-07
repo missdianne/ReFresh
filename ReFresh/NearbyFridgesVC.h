@@ -11,7 +11,7 @@
 #import "Fridge+Create.h"
 #import "Item.h"
 
-@interface NearbyFridgesVC : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface NearbyFridgesVC : UIViewController <MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) Fridge *fridge;

@@ -57,7 +57,6 @@
 
 // OPTIONAL: Number of sections
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    NSLog(@"set num of sections");
     return 1; //default
 }
 
@@ -87,14 +86,14 @@
     myCell.name.text = myCell.ingredient.name;
    // myCell.selectedBackgroundView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"photo-frame-selected.png"]];
     
-  //  myCell.backgroundColor = [UIColor greenColor];
+    myCell.backgroundColor = [UIColor whiteColor];
     return myCell;
 }
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selected");
+  //  NSLog(@"selected");
     if (self.shareEnabled) {
         Item *anIngredient = [self.fridge objectAtIndex:indexPath.row];
         UICollectionViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
@@ -106,15 +105,14 @@
         
         [self.selectedIngredients addObject:selectedIngredientName];
         
-        NSLog(@"added %@ to recipe getter", selectedIngredientName);
-        NSLog(@" all ingredients to be searched %@", [self.selectedIngredients componentsJoinedByString:@","]);
+      //  NSLog(@" all ingredients to be searched %@", [self.selectedIngredients componentsJoinedByString:@","]);
     }
 }
 
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        NSLog(@"deselected");
+      //  NSLog(@"deselected");
     if (self.shareEnabled) {
         Item *anIngredient = [self.fridge objectAtIndex:indexPath.row];
         NSString *selectedIngredientName = anIngredient.name;
@@ -142,10 +140,10 @@
     [super viewDidAppear:animated];
     [self.collectionView setAllowsMultipleSelection:YES];
     ReFreshDatabase *rdb = [ReFreshDatabase sharedDefaultReFreshDatabase];
-    NSLog(@"rdb managed context: %@", rdb.managedObjectContext);
+   // NSLog(@"rdb managed context: %@", rdb.managedObjectContext);
     if (rdb.managedObjectContext) {
         self.managedObjectContext = rdb.managedObjectContext;
-        NSLog(@"my context is: %@", self.managedObjectContext);
+   //     NSLog(@"my context is: %@", self.managedObjectContext);
         [self fetchFridge];
         
     } else {
@@ -202,7 +200,7 @@
             //   [self.collectionView reloadData];
     } else {
         self.fetchedResultsController = nil;
-        NSLog(@"no fetched managedcontext");
+       // NSLog(@"no fetched managedcontext");
     }
   //  NSLog(@"fetched object (fetchFridge) %@", self.fetchedResultsController.fetchedObjects);
 }
@@ -217,7 +215,7 @@
     for (Item *item in results)
     {
         [self.fridge addObject:item];
-        NSLog(@"ingredient to be used: %@", item.name);
+    //    NSLog(@"ingredient to be used: %@", item.name);
     }
 }
 

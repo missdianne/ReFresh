@@ -25,7 +25,7 @@
      //   NSURL *url = [NSURL URLWithString:self.fullURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:self.fullURL];
         [_viewWeb loadRequest:requestObj];
-        NSLog(@"website loaded");
+      //  NSLog(@"website loaded");
     }
     // Do any additional setup after loading the view.
 }

@@ -3,11 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Carrots.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "filename" : "carrots.png"
     }
   ],
   "info" : {

@@ -32,15 +32,16 @@
     _name.delegate = self;
     _password.delegate = self;
     
+    self.lemon.frame = CGRectMake(50, -250, CGRectGetWidth(self.lemon.bounds), CGRectGetHeight(self.lemon.bounds));
+    
     CGFloat topWidth = CGRectGetWidth(self.fridgeTop.bounds);
     CGFloat topHeight = CGRectGetHeight(self.fridgeTop.bounds);
     
     [UIView animateWithDuration:.75
-                          delay:0.5
+                          delay:.5
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         self.fridgeTop.frame = CGRectMake(self.fridgeTop.frame.origin.x+400, self.fridgeTop.frame.origin.y, topWidth, topHeight);
-                         
+                         self.fridgeTop.frame = CGRectMake(self.fridgeTop.frame.origin.x+400, self.fridgeTop.frame.origin.y, topWidth, topHeight);     
                      }
                      completion:^(BOOL finished){
                     }];
@@ -50,7 +51,7 @@
     CGFloat bottomHeight = CGRectGetHeight(self.fridgeBottom.bounds);
     
     [UIView animateWithDuration:.75
-                          delay:.5
+                          delay:.75
                         options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.fridgeBottom.frame = CGRectMake(self.fridgeBottom.frame.origin.x-400, self.fridgeBottom.frame.origin.y, bottomWidth, bottomHeight);
@@ -58,6 +59,17 @@
                      }
                      completion:^(BOOL finished){
                        
+                     }];
+    
+    [UIView animateWithDuration:1
+                          delay:1.5
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.lemon.frame = CGRectMake(self.lemon.frame.origin.x, self.lemon.frame.origin.y+320,CGRectGetWidth(self.lemon.bounds), CGRectGetHeight(self.lemon.bounds));
+                         
+                     }
+                     completion:^(BOOL finished){
+                         
                      }];
     
 }
