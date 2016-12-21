@@ -12,5 +12,8 @@
 @interface FridgeAnimationVC : UIViewController <UITextFieldDelegate>
 
 
+@property (strong, nonatomic) IBOutlet UITextField *name;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+
 
 @end

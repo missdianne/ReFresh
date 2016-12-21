@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F12905F1976007A005A72F9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F12905E1976007A005A72F9 /* Parse.framework */; };
+		1F129061197600B4005A72F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129060197600B4005A72F9 /* AudioToolbox.framework */; };
+		1F129063197600BD005A72F9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129062197600BD005A72F9 /* CFNetwork.framework */; };
+		1F129065197600CD005A72F9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129064197600CD005A72F9 /* CoreLocation.framework */; };
+		1F129067197600D7005A72F9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129066197600D7005A72F9 /* libz.dylib */; };
+		1F129069197600DD005A72F9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129068197600DD005A72F9 /* MobileCoreServices.framework */; };
+		1F12906B197600E5005A72F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F12906A197600E5005A72F9 /* QuartzCore.framework */; };
+		1F12906D197600EC005A72F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F12906C197600EC005A72F9 /* Security.framework */; };
+		1F12906F197600F3005A72F9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F12906E197600F3005A72F9 /* StoreKit.framework */; };
+		1F129071197600FB005A72F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F129070197600FB005A72F9 /* SystemConfiguration.framework */; };
 		1F3EB67E1941A9E100383668 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EB67D1941A9E100383668 /* MapKit.framework */; };
 		1F3EB6811941ABF600383668 /* NutritionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6801941ABF600383668 /* NutritionGroup.m */; };
 		1F3EB6841941ABF700383668 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB6831941ABF700383668 /* Fridge.m */; };
@@ -39,6 +49,7 @@
 		1F8466BE1941311C00FDF1E8 /* Fridge+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8466BD1941311C00FDF1E8 /* Fridge+Create.m */; };
 		1F8466C11941456A00FDF1E8 /* NearbyFridgesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */; };
 		1FBC621D193AA37B006F59E4 /* SelectedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC621C193AA37B006F59E4 /* SelectedRecipeViewController.m */; };
+		1FCB15EE19808CE6001FB34A /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB15ED19808CE6001FB34A /* LoginVC.m */; };
 		1FCDC76819384841009E9C2A /* RecipeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC76719384841009E9C2A /* RecipeTVC.m */; };
 		1FCDC76B193849D2009E9C2A /* YummlyFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC76A193849D2009E9C2A /* YummlyFetcher.m */; };
 		1FCDC77219394A31009E9C2A /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDC77119394A31009E9C2A /* IngredientCollectionViewCell.m */; };
@@ -56,6 +67,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F12905E1976007A005A72F9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1F129060197600B4005A72F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1F129062197600BD005A72F9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F129064197600CD005A72F9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1F129066197600D7005A72F9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1F129068197600DD005A72F9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1F12906A197600E5005A72F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F12906C197600EC005A72F9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F12906E197600F3005A72F9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1F129070197600FB005A72F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1F3EB67D1941A9E100383668 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F3EB67F1941ABF600383668 /* NutritionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionGroup.h; sourceTree = "<group>"; };
 		1F3EB6801941ABF600383668 /* NutritionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionGroup.m; sourceTree = "<group>"; };
@@ -108,6 +129,8 @@
 		1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyFridgesVC.m; sourceTree = "<group>"; };
 		1FBC621B193AA37B006F59E4 /* SelectedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedRecipeViewController.h; sourceTree = "<group>"; };
 		1FBC621C193AA37B006F59E4 /* SelectedRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedRecipeViewController.m; sourceTree = "<group>"; };
+		1FCB15EC19808CE6001FB34A /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		1FCB15ED19808CE6001FB34A /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		1FCDC76619384841009E9C2A /* RecipeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTVC.h; sourceTree = "<group>"; };
 		1FCDC76719384841009E9C2A /* RecipeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTVC.m; sourceTree = "<group>"; };
 		1FCDC769193849D2009E9C2A /* YummlyFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YummlyFetcher.h; sourceTree = "<group>"; };
@@ -123,10 +146,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3EB67E1941A9E100383668 /* MapKit.framework in Frameworks */,
+				1F129071197600FB005A72F9 /* SystemConfiguration.framework in Frameworks */,
+				1F12906F197600F3005A72F9 /* StoreKit.framework in Frameworks */,
+				1F12906D197600EC005A72F9 /* Security.framework in Frameworks */,
+				1F12906B197600E5005A72F9 /* QuartzCore.framework in Frameworks */,
+				1F129069197600DD005A72F9 /* MobileCoreServices.framework in Frameworks */,
+				1F129067197600D7005A72F9 /* libz.dylib in Frameworks */,
+				1F129065197600CD005A72F9 /* CoreLocation.framework in Frameworks */,
 				1F6903F819327ECE00C340F2 /* CoreGraphics.framework in Frameworks */,
+				1F129063197600BD005A72F9 /* CFNetwork.framework in Frameworks */,
+				1F129061197600B4005A72F9 /* AudioToolbox.framework in Frameworks */,
+				1F3EB67E1941A9E100383668 /* MapKit.framework in Frameworks */,
 				1F6903FA19327ECE00C340F2 /* UIKit.framework in Frameworks */,
 				1F6903F619327ECE00C340F2 /* Foundation.framework in Frameworks */,
+				1F12905F1976007A005A72F9 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +222,16 @@
 		1F6903F419327ECE00C340F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F129070197600FB005A72F9 /* SystemConfiguration.framework */,
+				1F12906E197600F3005A72F9 /* StoreKit.framework */,
+				1F12906C197600EC005A72F9 /* Security.framework */,
+				1F12906A197600E5005A72F9 /* QuartzCore.framework */,
+				1F129068197600DD005A72F9 /* MobileCoreServices.framework */,
+				1F129066197600D7005A72F9 /* libz.dylib */,
+				1F129064197600CD005A72F9 /* CoreLocation.framework */,
+				1F129062197600BD005A72F9 /* CFNetwork.framework */,
+				1F129060197600B4005A72F9 /* AudioToolbox.framework */,
+				1F12905E1976007A005A72F9 /* Parse.framework */,
 				1F3EB67D1941A9E100383668 /* MapKit.framework */,
 				1F6903F519327ECE00C340F2 /* Foundation.framework */,
 				1F6903F719327ECE00C340F2 /* CoreGraphics.framework */,
@@ -203,6 +246,8 @@
 			children = (
 				1FA1D5491941980D00FC9550 /* CDTVC */,
 				1F69040719327ECE00C340F2 /* Main_iPhone.storyboard */,
+				1FCB15EC19808CE6001FB34A /* LoginVC.h */,
+				1FCB15ED19808CE6001FB34A /* LoginVC.m */,
 				1F8466BF1941456A00FDF1E8 /* NearbyFridgesVC.h */,
 				1F8466C01941456A00FDF1E8 /* NearbyFridgesVC.m */,
 				1F84669519410EAD00FDF1E8 /* FridgeAnimationVC.h */,
@@ -395,6 +440,7 @@
 				1F44FDD219329E2B00E44C23 /* CoreDataTableViewController.m in Sources */,
 				1F3EB68A1941ABF700383668 /* Recipe.m in Sources */,
 				1F8466C11941456A00FDF1E8 /* NearbyFridgesVC.m in Sources */,
+				1FCB15EE19808CE6001FB34A /* LoginVC.m in Sources */,
 				1F69040F19327ECE00C340F2 /* ReFreshViewController.m in Sources */,
 				1F3EB6841941ABF700383668 /* Fridge.m in Sources */,
 				1F69040219327ECE00C340F2 /* main.m in Sources */,
@@ -538,6 +584,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
 				INFOPLIST_FILE = "ReFresh/ReFresh-Info.plist";
@@ -552,6 +602,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ReFresh/ReFresh-Prefix.pch";
 				INFOPLIST_FILE = "ReFresh/ReFresh-Info.plist";

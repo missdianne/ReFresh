@@ -1,0 +1,46 @@
+user:diannena (Na, Dianne)
+
+FINAL PROJECT
+App name: ReFresh
+Collaboration partner: D.School Design for Sustainable Food Systems class
+Notes: I used Core Data, jSON data queries, EventKit, animations, swipe gestures, UITableView, UICustomTableView, UICollectionView, UIMapView, UIWebView, delegates, camera and autolayout in this assignment.
+Notes 2: for Demo, i uploaded 2 fridges (Taylor and dianne) and food items in the “ReFreshDatabase.m” file for demo purposes
+******************************************************
+App login: Intro is animated with 3 UIViews flying in and out.  Press “log in”. don’t need to change any info
+
+Tab I. My fridge: food items are store in core data with name, serving size, serving type, dateOpened, dateExpr (calculated in model), and Nutritional Group. 
+I. My Fridge
+	a. App will immediately load MyFridge in UITableView. Will highlight items which are near expiration. (i have set proteins to be near expiration to show highlight works). 
+	b. all near expiration items and automatically added Reminders (from EventKit sdk). You will be prompted to allow Access to Reminders.app (separate default app on iPhone, NOT ON simulator! need to use iPhone to check this). Along with Reminders to buy these items, EKAlarms have also been added for the items.
+	c. swipe left on any uitableview cell to “delete” the item with animation. will also delete from core data. 
+III. AddItem
+	a. swipe left, right, up or down to change the “Nutritional Group” of the item (presented in different color backgrounds). NGs are veggies, fruits, dairy and proteins.
+	b. enter name and serving size of item you wish to log, use segmented control to select a serving type. 
+	c. Take a picture of the item. picture will be re-displayed as the new UIImage in the center
+	d. “save item” button will enable item to be added to core data. also adds a Reminder via EventKit to show it works. you will get alert when everything is correct.
+	e. if you don’t enter the correct info or miss a textfield, the app will complain via an alert
+**************************************
+Tab II. Get Recipe: 
+I. Include in my recipe
+	a. items are displayed in custom UICollectionviewcells. tap any icons to select it.
+	b. allows multi selection of items to be used in the recipe
+	c. tap again if you want to de-select an item.
+	d. recipe button in top right segues
+II. Recipes powered by Yummly
+	a. calls Yummly API via jSON and my YummlyFetcher class to get dishes that use selected ingredients/items
+	b. updates table with thumbnail images, name and recipe rating from the data pull
+	c. *note: w/ the data call, sometimes the top cell images take a second to load, be patient or scroll down and images will show. if a recipe doesn’t have an thumbnail image, I just give it the thumbnail of the previous dish for demo purposes
+III. selected recipe
+	a. select any of the recipes in the previous VC and the app takes you to a UIWebview of the full recipe
+**************************************
+Tab III. Borrow:
+I.  Nearby fridges
+	a. screen is half UIMapView and half UITable View
+	b. app takes you to default fridge with location of the fridge (set in ReFreshdatabase.m for demo purposes) with pin
+	c. click on pin to enable listing of current items in this fridge.
+	d. Zoom out (squeeze gesture) and you will see another pin (“taylor”) on the map. 
+	e. tap “taylor” pin and contents of UITableview will update to reflect contents of that fridge
+	f. tap back to “dianne” pin and contents of UITableView will update again to “dianne” fridge (w/ changed background)
+	g. in TableViewCells, tap on details icon to “borrow” that item from the fridge, alert will pop up
+
+

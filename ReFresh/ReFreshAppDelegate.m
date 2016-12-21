@@ -8,6 +8,7 @@
 
 #import "ReFreshAppDelegate.h"
 #import "ReFreshDatabase.h"
+#import <Parse/Parse.h>
 
 
 @implementation ReFreshAppDelegate
@@ -17,7 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [Parse setApplicationId:@"ZgClf5NYSOvzhHMTW49gpZYcZx9IjX5DFfrxVCGD"
+                  clientKey:@"6CLf9GAGK520QBPeBf7uuBqGir4xPaPgSRayCH06"];
+    
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
     // Override point for customization after application launch.
+    
     [NSTimer scheduledTimerWithTimeInterval:FOREGROUND_FETCH_INTERVAL
                                      target:self
                                    selector:@selector(processFetchTimer:)
@@ -67,6 +76,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 @end

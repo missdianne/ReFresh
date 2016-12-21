@@ -11,13 +11,15 @@
 @interface FridgeAnimationVC () 
 @property (weak, nonatomic) IBOutlet UIImageView *fridgeTop;
 @property (weak, nonatomic) IBOutlet UIImageView *fridgeBottom;
-@property (strong, nonatomic) IBOutlet UITextField *name;
-@property (strong, nonatomic) IBOutlet UITextField *password;
+
 @property (strong, nonatomic) IBOutlet UIImageView *lemon;
 
 @end
 
 @implementation FridgeAnimationVC
+@synthesize password;
+@synthesize name;
+
 
 
 - (void)viewDidLoad
@@ -69,24 +71,32 @@
                          
                      }
                      completion:^(BOOL finished){
-                         
                      }];
     
 }
     // Do any additional setup after loading the view.
 
 
+- (IBAction)logIn:(UIButton *)sender {
+   
+}
 
 #pragma mark UITextFieldDelegate
 
 // dismisses the keyboard when the Return key is pressed
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
+#pragma mark - UITextFieldDelegate methods
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	if (textField == name) {
+		[password becomeFirstResponder];
+	}
+	if (textField == password) {
+		[passwordField resignFirstResponder];
+	}
+    
+	return YES;
+}
 
 - (void)didReceiveMemoryWarning
 {

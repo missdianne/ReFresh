@@ -13,6 +13,7 @@
 #import "ReFreshAppDelegate.h"
 #import "FridgeAnimationVC.h"
 #import "addItemViewController.h"
+#import <Parse/Parse.h>
 
 
 @interface MyFridgeCDTVC () <UIAlertViewDelegate>
@@ -100,10 +101,13 @@
 {
     [super viewDidLoad];
     self.tableView.backgroundView = nil;
+    
   //  [self.tableView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ice.png"]]];
     self.toDelete = FALSE;
     self.fridgeName = @"dianne";
-    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
     // Do any additional setup after loading the view.
     
 }
